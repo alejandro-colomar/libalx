@@ -93,7 +93,6 @@ struct	Alx_DynArr {
  * count:	Count (for repeated nodes in trees that don't accept duplicates).
  */
 struct	Alx_Node {
-	int64_t			key;
 	struct Alx_DynBuf	*buf;
 	struct Alx_Node		*left;
 	struct Alx_Node		*right;
