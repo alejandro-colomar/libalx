@@ -34,7 +34,7 @@
 #include <sys/types.h>
 
 #include "libalx/base/compiler/restrict.hpp"
-#include "libalx/alx/data-structures/llist.hpp"
+#include "libalx/alx/data-structures/types.hpp"
 
 
 /******************************************************************************

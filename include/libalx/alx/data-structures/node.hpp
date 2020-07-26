@@ -34,7 +34,7 @@
 #include <sys/types.h>
 
 #include "libalx/base/compiler/restrict.hpp"
-#include "libalx/alx/data-structures/dyn-buffer.hpp"
+#include "libalx/alx/data-structures/types.hpp"
 
 
 /******************************************************************************
