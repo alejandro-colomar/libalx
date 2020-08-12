@@ -38,6 +38,9 @@ checks for all the different possible errors.
 	<libalx/base/stdlib/alloc/frees.h>
 	<libalx/base/stdlib/alloc/frees.hpp>
 
+The user can choose to include them separately, or just
+``#include <libalx/base/stdlib.h>`` (or the ``.hpp`` version).
+
 2) Functions
 ------------
 
@@ -74,7 +77,12 @@ checks for all the different possible errors.
 	void	frees(type **ptr);
 
 To be able to use any of those functions, the corresponding header should be
-included.
+included.  The functions have a prefix: ``alx_``; to use them without the
+prefix, ``ALX_NO_PREFIX`` should be defined before including the header:
+
+::
+	#define ALX_NO_PREFIX
+	#include <libalx/base/stdlib.h>
 
 
 3) Description
