@@ -125,8 +125,8 @@ export	INSTALL_PC_DIR
 
 ################################################################################
 # Make variables (CC, etc...)
-  CC	= gcc-10
-  CXX	= g++-10
+  CC	= gcc
+  CXX	= g++
   AS	= as
   AR	= ar
   LD	= ld
