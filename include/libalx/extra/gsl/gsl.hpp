@@ -19,8 +19,8 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/extra/gsl/cblas/iXamax.hpp>
-#include <libalx/extra/gsl/cblas/iXamin.hpp>
+#include <libalx/extra/gsl/cblas/lvl1/iXamax.hpp>
+#include <libalx/extra/gsl/cblas/lvl1/iXamin.hpp>
 #include <libalx/extra/gsl/distance/chebyshev.hpp>
 #include <libalx/extra/gsl/distance/euclidean.hpp>
 #include <libalx/extra/gsl/distance/manhattan.hpp>
