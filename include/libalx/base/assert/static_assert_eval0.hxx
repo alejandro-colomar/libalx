@@ -54,7 +54,8 @@ extern "C" {
  ******* alias ****************************************************************
  ******************************************************************************/
 #if defined(ALX_NO_PREFIX)
-#define Static_assert_eval0(e, ...)	alx_Static_assert_eval0(e, __VA_OPT__)
+#define Static_assert_eval0(e, ...)					\
+	alx_Static_assert_eval0(e, __VA_OPT__(,)  __VA_ARGS__)
 #endif
 
 
