@@ -19,10 +19,10 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/extra/ncurses/common.hpp>
-#include <libalx/extra/ncurses/get.hpp>
-#include <libalx/extra/ncurses/menu.hpp>
-#include <libalx/extra/ncurses/perror.hpp>
+#include <libalx/extra/ncurses/common.hxx>
+#include <libalx/extra/ncurses/get.hxx>
+#include <libalx/extra/ncurses/menu.hxx>
+#include <libalx/extra/ncurses/perror.hxx>
 
 
 /******************************************************************************

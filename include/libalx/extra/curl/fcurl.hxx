@@ -19,16 +19,16 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/extra/curl/fcurl/fclose.hpp>
-#include <libalx/extra/curl/fcurl/feof.hpp>
-#include <libalx/extra/curl/fcurl/fgetc.hpp>
-#include <libalx/extra/curl/fcurl/fgets.hpp>
-#include <libalx/extra/curl/fcurl/fopen.hpp>
-#include <libalx/extra/curl/fcurl/fread.hpp>
-#include <libalx/extra/curl/fcurl/finit.hpp>
-#include <libalx/extra/curl/fcurl/rewind.hpp>
-#include <libalx/extra/curl/fcurl/ungetc.hpp>
-#include <libalx/extra/curl/fcurl/URL_FILE.hpp>
+#include <libalx/extra/curl/fcurl/fclose.hxx>
+#include <libalx/extra/curl/fcurl/feof.hxx>
+#include <libalx/extra/curl/fcurl/fgetc.hxx>
+#include <libalx/extra/curl/fcurl/fgets.hxx>
+#include <libalx/extra/curl/fcurl/fopen.hxx>
+#include <libalx/extra/curl/fcurl/fread.hxx>
+#include <libalx/extra/curl/fcurl/finit.hxx>
+#include <libalx/extra/curl/fcurl/rewind.hxx>
+#include <libalx/extra/curl/fcurl/ungetc.hxx>
+#include <libalx/extra/curl/fcurl/URL_FILE.hxx>
 
 
 /******************************************************************************

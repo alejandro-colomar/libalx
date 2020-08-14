@@ -19,22 +19,22 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/extra/gsl/cblas/lvl1/iXamax.hpp>
-#include <libalx/extra/gsl/cblas/lvl1/iXamin.hpp>
-#include <libalx/extra/gsl/distance/chebyshev.hpp>
-#include <libalx/extra/gsl/distance/euclidean.hpp>
-#include <libalx/extra/gsl/distance/manhattan.hpp>
-#include <libalx/extra/gsl/distributions/binomial.hpp>
-#include <libalx/extra/gsl/distributions/exp.hpp>
-#include <libalx/extra/gsl/distributions/gauss.hpp>
-#include <libalx/extra/gsl/distributions/geometric.hpp>
-#include <libalx/extra/gsl/distributions/poisson.hpp>
-#include <libalx/extra/gsl/distributions/uniform.hpp>
-#include <libalx/extra/gsl/rstat/median.hpp>
-#include <libalx/extra/gsl/statistics/mean.hpp>
-#include <libalx/extra/gsl/units/len.hpp>
-#include <libalx/extra/gsl/units/temp.hpp>
-#include <libalx/extra/gsl/units/weight.hpp>
+#include <libalx/extra/gsl/cblas/lvl1/iXamax.hxx>
+#include <libalx/extra/gsl/cblas/lvl1/iXamin.hxx>
+#include <libalx/extra/gsl/distance/chebyshev.hxx>
+#include <libalx/extra/gsl/distance/euclidean.hxx>
+#include <libalx/extra/gsl/distance/manhattan.hxx>
+#include <libalx/extra/gsl/distributions/binomial.hxx>
+#include <libalx/extra/gsl/distributions/exp.hxx>
+#include <libalx/extra/gsl/distributions/gauss.hxx>
+#include <libalx/extra/gsl/distributions/geometric.hxx>
+#include <libalx/extra/gsl/distributions/poisson.hxx>
+#include <libalx/extra/gsl/distributions/uniform.hxx>
+#include <libalx/extra/gsl/rstat/median.hxx>
+#include <libalx/extra/gsl/statistics/mean.hxx>
+#include <libalx/extra/gsl/units/len.hxx>
+#include <libalx/extra/gsl/units/temp.hxx>
+#include <libalx/extra/gsl/units/weight.hxx>
 
 
 /******************************************************************************

@@ -60,7 +60,7 @@ MODULES	=								\
 	extra/cv/videoio/cam						\
 	extra/cv/ximgproc/thinning
 
-SRC	= $(MODULES:%=$(SRC_DIR)/%.cpp)
+SRC	= $(MODULES:%=$(SRC_DIR)/%.cxx)
 DEP	= $(MODULES:%=$(BUILD_TMP_DIR)/%.d)
 OBJ	= $(MODULES:%=$(BUILD_TMP_DIR)/%.o)
 
@@ -80,18 +80,18 @@ all: $(BOTH_OBJ)
 	@:
 
 
-$(BUILD_TMP_DIR)/%.d: $(SRC_DIR)/%.cpp $(MK_DEPS)
+$(BUILD_TMP_DIR)/%.d: $(SRC_DIR)/%.cxx $(MK_DEPS)
 	$(Q)mkdir -p		$(@D)/
 	@echo	"	CXX -M	build/tmp/$*.d"
 	$(Q)$(CXX) $(CXXFLAGS_A) -MG -MT"$@"				\
 			-MT"$(BUILD_TMP_DIR)/$*.a.s"			\
 			-MT"$(BUILD_TMP_DIR)/$*.so.s"			\
 			-M $< -MF $@
-$(BUILD_TMP_DIR)/%.a.s: $(SRC_DIR)/%.cpp $(BUILD_TMP_DIR)/%.d
+$(BUILD_TMP_DIR)/%.a.s: $(SRC_DIR)/%.cxx $(BUILD_TMP_DIR)/%.d
 	$(Q)mkdir -p		$(@D)/
 	@echo	"	CXX	build/tmp/$*.a.s"
 	$(Q)$(CXX) $(CXXFLAGS_A) -S $< -o $@
-$(BUILD_TMP_DIR)/%.so.s: $(SRC_DIR)/%.cpp $(BUILD_TMP_DIR)/%.d
+$(BUILD_TMP_DIR)/%.so.s: $(SRC_DIR)/%.cxx $(BUILD_TMP_DIR)/%.d
 	$(Q)mkdir -p		$(@D)/
 	@echo	"	CXX	build/tmp/$*.so.s"
 	$(Q)$(CXX) $(CXXFLAGS_SO) -S $< -o $@

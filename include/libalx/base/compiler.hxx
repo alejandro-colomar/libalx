@@ -19,11 +19,11 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/compiler/attribute.hpp>
-#include <libalx/base/compiler/restrict.hpp>
-#include <libalx/base/compiler/size.hpp>
-#include <libalx/base/compiler/type.hpp>
-#include <libalx/base/compiler/unused.hpp>
+#include <libalx/base/compiler/attribute.hxx>
+#include <libalx/base/compiler/restrict.hxx>
+#include <libalx/base/compiler/size.hxx>
+#include <libalx/base/compiler/type.hxx>
+#include <libalx/base/compiler/unused.hxx>
 
 
 /******************************************************************************

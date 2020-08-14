@@ -19,14 +19,14 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/assert/array.hpp>
-#include <libalx/base/assert/assert.hpp>
-#include <libalx/base/assert/char.hpp>
-#include <libalx/base/assert/pointer.hpp>
-#include <libalx/base/assert/static_assert_eval0.hpp>
-#include <libalx/base/assert/stddef.hpp>
-#include <libalx/base/assert/stdint.hpp>
-#include <libalx/base/assert/type.hpp>
+#include <libalx/base/assert/array.hxx>
+#include <libalx/base/assert/assert.hxx>
+#include <libalx/base/assert/char.hxx>
+#include <libalx/base/assert/pointer.hxx>
+#include <libalx/base/assert/static_assert_eval0.hxx>
+#include <libalx/base/assert/stddef.hxx>
+#include <libalx/base/assert/stdint.hxx>
+#include <libalx/base/assert/type.hxx>
 
 
 /******************************************************************************

@@ -19,35 +19,35 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/stdlib/alloc/callocs.hpp>
-#include <libalx/base/stdlib/alloc/frees.hpp>
-#include <libalx/base/stdlib/alloc/mallocarray.hpp>
-#include <libalx/base/stdlib/alloc/mallocarrays.hpp>
-#include <libalx/base/stdlib/alloc/mallocs.hpp>
-#include <libalx/base/stdlib/alloc/reallocarrayf.hpp>
-#include <libalx/base/stdlib/alloc/reallocarrayfs.hpp>
-#include <libalx/base/stdlib/alloc/reallocarrays.hpp>
-#include <libalx/base/stdlib/alloc/reallocfs.hpp>
-#include <libalx/base/stdlib/alloc/reallocs.hpp>
-#include <libalx/base/stdlib/getenv/getenv_f.hpp>
-#include <libalx/base/stdlib/getenv/getenv_i.hpp>
-#include <libalx/base/stdlib/getenv/getenv_s.hpp>
-#include <libalx/base/stdlib/getenv/getenv_u.hpp>
-#include <libalx/base/stdlib/strto/strtof_s.hpp>
-#include <libalx/base/stdlib/strto/strtoi_s.hpp>
-#include <libalx/base/stdlib/strto/strtou_s.hpp>
-#include <libalx/base/stdlib/array_split_pos_neg.hpp>
-#include <libalx/base/stdlib/avg.hpp>
-#include <libalx/base/stdlib/bsearch.hpp>
-#include <libalx/base/stdlib/clz.hpp>
-#include <libalx/base/stdlib/cmp.hpp>
-#include <libalx/base/stdlib/ctz.hpp>
-#include <libalx/base/stdlib/lmax.hpp>
-#include <libalx/base/stdlib/popcnt.hpp>
-#include <libalx/base/stdlib/pow.hpp>
-#include <libalx/base/stdlib/search.hpp>
-#include <libalx/base/stdlib/seed.hpp>
-#include <libalx/base/stdlib/swap.hpp>
+#include <libalx/base/stdlib/alloc/callocs.hxx>
+#include <libalx/base/stdlib/alloc/frees.hxx>
+#include <libalx/base/stdlib/alloc/mallocarray.hxx>
+#include <libalx/base/stdlib/alloc/mallocarrays.hxx>
+#include <libalx/base/stdlib/alloc/mallocs.hxx>
+#include <libalx/base/stdlib/alloc/reallocarrayf.hxx>
+#include <libalx/base/stdlib/alloc/reallocarrayfs.hxx>
+#include <libalx/base/stdlib/alloc/reallocarrays.hxx>
+#include <libalx/base/stdlib/alloc/reallocfs.hxx>
+#include <libalx/base/stdlib/alloc/reallocs.hxx>
+#include <libalx/base/stdlib/getenv/getenv_f.hxx>
+#include <libalx/base/stdlib/getenv/getenv_i.hxx>
+#include <libalx/base/stdlib/getenv/getenv_s.hxx>
+#include <libalx/base/stdlib/getenv/getenv_u.hxx>
+#include <libalx/base/stdlib/strto/strtof_s.hxx>
+#include <libalx/base/stdlib/strto/strtoi_s.hxx>
+#include <libalx/base/stdlib/strto/strtou_s.hxx>
+#include <libalx/base/stdlib/array_split_pos_neg.hxx>
+#include <libalx/base/stdlib/avg.hxx>
+#include <libalx/base/stdlib/bsearch.hxx>
+#include <libalx/base/stdlib/clz.hxx>
+#include <libalx/base/stdlib/cmp.hxx>
+#include <libalx/base/stdlib/ctz.hxx>
+#include <libalx/base/stdlib/lmax.hxx>
+#include <libalx/base/stdlib/popcnt.hxx>
+#include <libalx/base/stdlib/pow.hxx>
+#include <libalx/base/stdlib/search.hxx>
+#include <libalx/base/stdlib/seed.hxx>
+#include <libalx/base/stdlib/swap.hxx>
 
 
 /******************************************************************************

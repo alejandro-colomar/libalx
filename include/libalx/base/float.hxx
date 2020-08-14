@@ -19,9 +19,9 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/float/constant.hpp>
-#include <libalx/base/float/printf.hpp>
-#include <libalx/base/float/scanf.hpp>
+#include <libalx/base/float/constant.hxx>
+#include <libalx/base/float/printf.hxx>
+#include <libalx/base/float/scanf.hxx>
 
 
 /******************************************************************************

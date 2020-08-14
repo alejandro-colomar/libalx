@@ -19,16 +19,16 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/stdio/printf/b.hpp>
-#include <libalx/base/stdio/printf/sbprintf.hpp>
-#include <libalx/base/stdio/printf/snprintfs.hpp>
-#include <libalx/base/stdio/escape_sequences.hpp>
-#include <libalx/base/stdio/fgets.hpp>
-#include <libalx/base/stdio/freads.hpp>
-#include <libalx/base/stdio/get.hpp>
-#include <libalx/base/stdio/seekc.hpp>
-#include <libalx/base/stdio/sscan.hpp>
-#include <libalx/base/stdio/tmpfname.hpp>
+#include <libalx/base/stdio/printf/b.hxx>
+#include <libalx/base/stdio/printf/sbprintf.hxx>
+#include <libalx/base/stdio/printf/snprintfs.hxx>
+#include <libalx/base/stdio/escape_sequences.hxx>
+#include <libalx/base/stdio/fgets.hxx>
+#include <libalx/base/stdio/freads.hxx>
+#include <libalx/base/stdio/get.hxx>
+#include <libalx/base/stdio/seekc.hxx>
+#include <libalx/base/stdio/sscan.hxx>
+#include <libalx/base/stdio/tmpfname.hxx>
 
 
 /******************************************************************************

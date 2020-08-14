@@ -19,14 +19,14 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/alx/robot/ur/core/core.hpp>
-#include <libalx/alx/robot/ur/core/msg/msg.hpp>
-#include <libalx/alx/robot/ur/core/msg/robot_state.hpp>
-#include <libalx/alx/robot/ur/io/io.hpp>
-#include <libalx/alx/robot/ur/miscellaneous/miscellaneous.hpp>
-#include <libalx/alx/robot/ur/move/move.hpp>
-#include <libalx/alx/robot/ur/pose/pose.hpp>
-#include <libalx/alx/robot/ur/setup/setup.hpp>
+#include <libalx/alx/robot/ur/core/core.hxx>
+#include <libalx/alx/robot/ur/core/msg/msg.hxx>
+#include <libalx/alx/robot/ur/core/msg/robot_state.hxx>
+#include <libalx/alx/robot/ur/io/io.hxx>
+#include <libalx/alx/robot/ur/miscellaneous/miscellaneous.hxx>
+#include <libalx/alx/robot/ur/move/move.hxx>
+#include <libalx/alx/robot/ur/pose/pose.hxx>
+#include <libalx/alx/robot/ur/setup/setup.hxx>
 
 
 /******************************************************************************

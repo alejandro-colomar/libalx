@@ -19,10 +19,10 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/extra/plot/core.hpp>
-#include <libalx/extra/plot/multi.hpp>
-#include <libalx/extra/plot/plot.hpp>
-#include <libalx/extra/plot/setup.hpp>
+#include <libalx/extra/plot/core.hxx>
+#include <libalx/extra/plot/multi.hxx>
+#include <libalx/extra/plot/plot.hxx>
+#include <libalx/extra/plot/setup.hxx>
 
 
 /******************************************************************************

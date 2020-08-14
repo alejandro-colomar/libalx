@@ -19,11 +19,11 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/stdint/mask/bit.hpp>
-#include <libalx/base/stdint/mask/field.hpp>
-#include <libalx/base/stdint/mask/mask.hpp>
-#include <libalx/base/stdint/constants.hpp>
-#include <libalx/base/stdint/types.hpp>
+#include <libalx/base/stdint/mask/bit.hxx>
+#include <libalx/base/stdint/mask/field.hxx>
+#include <libalx/base/stdint/mask/mask.hxx>
+#include <libalx/base/stdint/constants.hxx>
+#include <libalx/base/stdint/types.hxx>
 
 
 /******************************************************************************

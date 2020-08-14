@@ -19,11 +19,11 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/sys/socket/tcp/client.hpp>
-#include <libalx/base/sys/socket/tcp/server.hpp>
-#include <libalx/base/sys/socket/msghdr.hpp>
-#include <libalx/base/sys/socket/timestamp.hpp>
-#include <libalx/base/sys/types.hpp>
+#include <libalx/base/sys/socket/tcp/client.hxx>
+#include <libalx/base/sys/socket/tcp/server.hxx>
+#include <libalx/base/sys/socket/msghdr.hxx>
+#include <libalx/base/sys/socket/timestamp.hxx>
+#include <libalx/base/sys/types.hxx>
 
 
 /******************************************************************************

@@ -19,34 +19,34 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include <libalx/base/string/memchr/memchrend.hpp>
-#include <libalx/base/string/strbool/strbool.hpp>
-#include <libalx/base/string/strcat/strbcatf.hpp>
-#include <libalx/base/string/strcat/strscat.hpp>
-#include <libalx/base/string/strcat/strscatf.hpp>
-#include <libalx/base/string/strcat/strscatfs.hpp>
-#include <libalx/base/string/strchr/strcasechr.hpp>
-#include <libalx/base/string/strchr/strcasechrnul.hpp>
-#include <libalx/base/string/strchr/strncasechr.hpp>
-#include <libalx/base/string/strchr/strncasechrnul.hpp>
-#include <libalx/base/string/strchr/strnchr.hpp>
-#include <libalx/base/string/strchr/strnchrnul.hpp>
-#include <libalx/base/string/strchr/strnrcasechr.hpp>
-#include <libalx/base/string/strchr/strnrcasechrnul.hpp>
-#include <libalx/base/string/strchr/strnrchr.hpp>
-#include <libalx/base/string/strchr/strnrchrnul.hpp>
-#include <libalx/base/string/strchr/strrcasechr.hpp>
-#include <libalx/base/string/strchr/strrcasechrnul.hpp>
-#include <libalx/base/string/strchr/strrchrnul.hpp>
-#include <libalx/base/string/strcpy/strlcpys.hpp>
-#include <libalx/base/string/strcpy/strscpy.hpp>
-#include <libalx/base/string/strlwr/strlwr.hpp>
-#include <libalx/base/string/strlwr/strnlwr.hpp>
-#include <libalx/base/string/strlwr/strnupr.hpp>
-#include <libalx/base/string/strlwr/strupr.hpp>
-#include <libalx/base/string/strstr/strncasestr.hpp>
-#include <libalx/base/string/strstr/strscasestr.hpp>
-#include <libalx/base/string/strstr/strsstr.hpp>
+#include <libalx/base/string/memchr/memchrend.hxx>
+#include <libalx/base/string/strbool/strbool.hxx>
+#include <libalx/base/string/strcat/strbcatf.hxx>
+#include <libalx/base/string/strcat/strscat.hxx>
+#include <libalx/base/string/strcat/strscatf.hxx>
+#include <libalx/base/string/strcat/strscatfs.hxx>
+#include <libalx/base/string/strchr/strcasechr.hxx>
+#include <libalx/base/string/strchr/strcasechrnul.hxx>
+#include <libalx/base/string/strchr/strncasechr.hxx>
+#include <libalx/base/string/strchr/strncasechrnul.hxx>
+#include <libalx/base/string/strchr/strnchr.hxx>
+#include <libalx/base/string/strchr/strnchrnul.hxx>
+#include <libalx/base/string/strchr/strnrcasechr.hxx>
+#include <libalx/base/string/strchr/strnrcasechrnul.hxx>
+#include <libalx/base/string/strchr/strnrchr.hxx>
+#include <libalx/base/string/strchr/strnrchrnul.hxx>
+#include <libalx/base/string/strchr/strrcasechr.hxx>
+#include <libalx/base/string/strchr/strrcasechrnul.hxx>
+#include <libalx/base/string/strchr/strrchrnul.hxx>
+#include <libalx/base/string/strcpy/strlcpys.hxx>
+#include <libalx/base/string/strcpy/strscpy.hxx>
+#include <libalx/base/string/strlwr/strlwr.hxx>
+#include <libalx/base/string/strlwr/strnlwr.hxx>
+#include <libalx/base/string/strlwr/strnupr.hxx>
+#include <libalx/base/string/strlwr/strupr.hxx>
+#include <libalx/base/string/strstr/strncasestr.hxx>
+#include <libalx/base/string/strstr/strscasestr.hxx>
+#include <libalx/base/string/strstr/strsstr.hxx>
 
 
 /******************************************************************************
