@@ -12,38 +12,6 @@ the user to allocate memory in a single short statement without having to add
 checks for all the different possible errors.
 
 
-1) Headers
-----------
-
-::
-
-	<libalx/base/stdlib/alloc/callocs.h>
-	<libalx/base/stdlib/alloc/callocs.hpp>
-	<libalx/base/stdlib/alloc/mallocarray.h>
-	<libalx/base/stdlib/alloc/mallocarray.hpp>
-	<libalx/base/stdlib/alloc/mallocarrays.h>
-	<libalx/base/stdlib/alloc/mallocarrays.hpp>
-	<libalx/base/stdlib/alloc/mallocs.h>
-	<libalx/base/stdlib/alloc/mallocs.hpp>
-	<libalx/base/stdlib/alloc/reallocarrayf.h>
-	<libalx/base/stdlib/alloc/reallocarrayf.hpp>
-	<libalx/base/stdlib/alloc/reallocarrayfs.h>
-	<libalx/base/stdlib/alloc/reallocarrayfs.hpp>
-	<libalx/base/stdlib/alloc/reallocarrays.h>
-	<libalx/base/stdlib/alloc/reallocarrays.hpp>
-	<libalx/base/stdlib/alloc/reallocfs.h>
-	<libalx/base/stdlib/alloc/reallocfs.hpp>
-	<libalx/base/stdlib/alloc/reallocs.h>
-	<libalx/base/stdlib/alloc/reallocs.hpp>
-	<libalx/base/stdlib/alloc/frees.h>
-	<libalx/base/stdlib/alloc/frees.hpp>
-
-The user can choose to include them separately, or just
-``#include <libalx/base/stdlib.h>`` (or the ``.hpp`` version).
-
-2) Functions
-------------
-
 ::
 
 	[[gnu::nonnull]] [[gnu::warn_unused_result]]
@@ -76,17 +44,14 @@ The user can choose to include them separately, or just
 	[[gnu::nonnull]]
 	void	frees(type **ptr);
 
-To be able to use any of those functions, the corresponding header should be
-included.  The functions have a prefix: ``alx_``; to use them without the
+The functions have a prefix by default: ``alx_``; to use them without the
 prefix, ``ALX_NO_PREFIX`` should be defined before including the header:
 
 ::
+
 	#define ALX_NO_PREFIX
 	#include <libalx/base/stdlib.h>
 
-
-3) Description
---------------
 
 Functions ending in ``s`` should always be preferred.  These are implemented
 as macros.  These macros use ``sizeof()`` internally and safely assign to
@@ -102,11 +67,4 @@ should be used when and only when dealing with buffers of bytes.
 
 ``frees()`` stores ``NULL`` in the pointer so that it can be freed more than
 once safely.
-
-
-4) More info
-------------
-
-For more detailed documentation about each of the functions, read the
-corresponding headers.
 
