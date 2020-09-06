@@ -123,7 +123,7 @@ int	alx::CV::local_max		(class cv::Mat *img)
 	imgtmp.convertTo(imgtmp, CV_8U);
 	imgtmp	= cv::Scalar(UINT8_MAX);
 
-	memset(arr_tmp, 0, ARRAY_BYTES__(arr_tmp));
+	memset(arr_tmp, 0, VLA_BYTES(arr_tmp));
 #pragma GCC ivdep
 	for (ptrdiff_t i = 0; i < rows; i++) {
 #pragma GCC ivdep

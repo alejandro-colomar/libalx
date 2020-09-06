@@ -33,17 +33,20 @@
  ******************************************************************************/
 #define ssizeof(x)		((ssize_t)sizeof(x))
 
-#define ARRAY_SIZE(arr)		(__arraycount((arr)) + alx_Static_assert_eval0_array(arr))
+#define ARRAY_SIZE(arr)							\
+	(__arraycount((arr)) + alx_Static_assert_eval0_array(arr))
 #define ARRAY_SSIZE(arr)	((ptrdiff_t)ARRAY_SIZE(arr))
-#define ARRAY_BYTES(arr)	(sizeof((arr)[0]) * ARRAY_SIZE(arr))
+#define ARRAY_BYTES(arr)						\
+	(sizeof(arr) + alx_Static_assert_eval0_array(arr))
 #define ARRAY_BITS(arr)		(ARRAY_BYTES(arr) * CHAR_BIT)
 
 #define FIELD_SIZEOF(t, f)	(sizeof(((t *)NULL)->f))
 #define FIELD_ARRAY_SIZE(t, f)						\
-	(__arraycount((((t *)NULL)->f)) + alx_Static_assert_eval0_array(((t *)NULL)->f))
-
-#define FIELD_ARRAY_BYTES(t, f)	(sizeof((((t *)NULL)->f)[0]) *		\
-				 FIELD_ARRAY_SIZE(t, f))
+	(__arraycount((((t *)NULL)->f)) +				\
+	 alx_Static_assert_eval0_array(((t *)NULL)->f))
+#define FIELD_ARRAY_SSIZE(t, f)	((ptrdiff_t)FIELD_ARRAY_SIZE(t, f))
+#define FIELD_ARRAY_BYTES(t, f)						\
+	(FIELD_SIZEOF(t, f) + alx_Static_assert_eval0_array(((t *)NULL)->f))
 
 
 /******************************************************************************

@@ -25,7 +25,7 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
-#include "libalx/base/assert/array.hxx"
+#include "libalx/base/assert/array.hpp"
 
 
 /******************************************************************************
@@ -33,18 +33,25 @@
  ******************************************************************************/
 #define ssizeof(x)		((ssize_t)sizeof(x))
 
-#define ARRAY_SIZE(arr)		(__arraycount((arr)) + alx_Static_assert_eval0_array(arr))
+#define ARRAY_SIZE(arr)							\
+	(__arraycount((arr)) + alx_Static_assert_eval0_array(arr))
 #define ARRAY_SSIZE(arr)	((ptrdiff_t)ARRAY_SIZE(arr))
-#define ARRAY_BYTES(arr)	(ARRAY_SIZE(arr) * sizeof((arr)[0]))
-#define ARRAY_BYTES__(arr)	(sizeof((arr)[0]) * __arraycount((arr)))
+#define ARRAY_BYTES(arr)						\
+	(sizeof(arr) + alx_Static_assert_eval0_array(arr))
 #define ARRAY_BITS(arr)		(ARRAY_BYTES(arr) * CHAR_BIT)
+
+#define VLA_SIZE(arr)		(__arraycount(arr))
+#define VLA_SSIZE(arr)		((ptrdiff_t)VLA_SIZE(arr))
+#define VLA_BYTES(arr)		(sizeof(arr))
+#define VLA_BITS(arr)		(VLA_BYTES(arr) * CHAR_BIT)
 
 #define FIELD_SIZEOF(t, f)	(sizeof(((t *)NULL)->f))
 #define FIELD_ARRAY_SIZE(t, f)						\
-	(__arraycount((((t *)NULL)->f)) + alx_Static_assert_eval0_array(arr))
-
-#define FIELD_ARRAY_BYTES(t, f)	(sizeof(((t *)NULL)->f[0]) *		\
-				 FIELD_ARRAY_SIZE(t, f))
+	(__arraycount((((t *)NULL)->f)) +				\
+	 alx_Static_assert_eval0_array(((t *)NULL)->f))
+#define FIELD_ARRAY_SSIZE(t, f)	((ptrdiff_t)FIELD_ARRAY_SIZE(t, f))
+#define FIELD_ARRAY_BYTES(t, f)						\
+	(FIELD_SIZEOF(t, f) + alx_Static_assert_eval0_array(((t *)NULL)->f))
 
 
 /******************************************************************************
