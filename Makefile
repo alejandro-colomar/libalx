@@ -194,6 +194,7 @@ CXXFLAGS_W     += -Wextra
 CXXFLAGS_W     += -Wpedantic
 CXXFLAGS_W     += -pedantic-errors
 CXXFLAGS_W     += -fno-common
+CXXFLAGS_W     += -Wno-vla
 CXXFLAGS_W     += -Werror
 
 CXXFLAGS_D	= -D _GNU_SOURCE
