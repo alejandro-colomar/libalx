@@ -16,7 +16,7 @@ BASE_MODULES	=							\
 		base/assert/assert					\
 		base/assert/char					\
 		base/assert/pointer					\
-		base/assert/static_assert_eval0				\
+		base/assert/must_be					\
 		base/assert/stddef					\
 		base/assert/stdint					\
 		base/assert/type					\

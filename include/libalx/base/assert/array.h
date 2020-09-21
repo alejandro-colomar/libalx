@@ -19,7 +19,7 @@
 /******************************************************************************
  ******* include **************************************************************
  ******************************************************************************/
-#include "libalx/base/assert/static_assert_eval0.h"
+#include "libalx/base/assert/must_be.h"
 #include "libalx/base/compiler/type.h"
 
 
@@ -32,8 +32,8 @@
 #define alx_Static_assert_char_array(a)					\
 	_Static_assert(alx_is_char_array(a), "Not a `char[]` !")
 
-#define alx_Static_assert_eval0_array(a)				\
-	alx_Static_assert_eval0(alx_is_array(a), "Not a `[]` !")
+#define alx_must_be_array(a)				\
+	alx_must_be(alx_is_array(a), "Not a `[]` !")
 
 
 /******************************************************************************
@@ -57,7 +57,7 @@
 #if defined(ALX_NO_PREFIX)
 #define Static_assert_array(a)		alx_Static_assert_array(a)
 #define Static_assert_char_array(a)	alx_Static_assert_char_array(a)
-#define Static_assert_eval0_array(a)	alx_Static_assert_eval0_array(a)
+#define must_be_array(a)		alx_must_be_array(a)
 #endif
 
 

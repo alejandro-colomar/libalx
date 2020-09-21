@@ -21,7 +21,6 @@
  ******************************************************************************/
 #include <cassert>
 
-#include "libalx/base/assert/static_assert_eval0.hxx"
 #include "libalx/base/compiler/type.hxx"
 
 
@@ -33,9 +32,6 @@
 
 #define alx_static_assert_char_array(a)					\
 	static_assert(alx_is_char_array(a), "Not a `char[]` !")
-
-#define alx_Static_assert_eval0_array(a)				\
-	alx_Static_assert_eval0(alx_is_array(a), "Not a `[]` !")
 
 
 /******************************************************************************
@@ -60,7 +56,6 @@ extern "C" {
 #if defined(ALX_NO_PREFIX)
 #define Static_assert_array(a)		alx_Static_assert_array(a)
 #define Static_assert_char_array(a)	alx_Static_assert_char_array(a)
-#define Static_assert_eval0_array(a)	alx_Static_assert_eval0_array(a)
 #endif
 
 

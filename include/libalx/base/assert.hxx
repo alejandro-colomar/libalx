@@ -23,7 +23,6 @@
 #include <libalx/base/assert/assert.hxx>
 #include <libalx/base/assert/char.hxx>
 #include <libalx/base/assert/pointer.hxx>
-#include <libalx/base/assert/static_assert_eval0.hxx>
 #include <libalx/base/assert/stddef.hxx>
 #include <libalx/base/assert/stdint.hxx>
 #include <libalx/base/assert/type.hxx>
