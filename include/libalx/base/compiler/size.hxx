@@ -25,7 +25,7 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
-#include "libalx/base/assert/array.hpp"
+#include "libalx/base/assert/array.hxx"
 
 
 /******************************************************************************
