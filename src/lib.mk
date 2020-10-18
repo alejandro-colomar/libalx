@@ -8,7 +8,7 @@ MK_DEPS	=								\
 	$(SRC_DIR)/lib.mk						\
 	$(LIBALX_DIR)/Makefile
 
-BUILD_A_PATH	= $(BUILD_A_DIR)/libalx
+BUILD_A_PATH	= $(BUILD_A_DIR_)/libalx
 BUILD_SO_PATH	= $(BUILD_SO_DIR)/libalx
 
 BASE_MODULES	=							\
@@ -284,9 +284,9 @@ all: $(ALL)
 PHONY += base
 base: base_a base_so
 PHONY += base_a
-base_a: $(BUILD_A_PATH)/libalx-base.a
+base_a: $(BUILD_A_DIR_)/libalx-base.a
 PHONY += base_so
-base_so: $(BUILD_SO_PATH)/libalx-base.so.$(LIBVERSION)
+base_so: $(BUILD_SO_DIR_)/libalx-base.so.$(LIBVERSION)
 
 
 PHONY += alx
@@ -297,23 +297,23 @@ alx: robot
 PHONY += data-structures
 data-structures: data-structures_a data-structures_so
 PHONY += data-structures_a
-data-structures_a: $(BUILD_A_PATH)/libalx-data-structures.a
+data-structures_a: $(BUILD_A_DIR_)/libalx-data-structures.a
 PHONY += data-structures_a
-data-structures_so: $(BUILD_SO_PATH)/libalx-data-structures.so.$(LIBVERSION)
+data-structures_so: $(BUILD_SO_DIR_)/libalx-data-structures.so.$(LIBVERSION)
 
 PHONY += npcomplete
 npcomplete: npcomplete_a npcomplete_so
 PHONY += npcomplete_a
-npcomplete_a: $(BUILD_A_PATH)/libalx-npcomplete.a
+npcomplete_a: $(BUILD_A_DIR_)/libalx-npcomplete.a
 PHONY += npcomplete_so
-npcomplete_so: $(BUILD_SO_PATH)/libalx-npcomplete.so.$(LIBVERSION)
+npcomplete_so: $(BUILD_SO_DIR_)/libalx-npcomplete.so.$(LIBVERSION)
 
 PHONY += robot
 robot: robot_a robot_so
 PHONY += robot_a
-robot_a: $(BUILD_A_PATH)/libalx-robot.a
+robot_a: $(BUILD_A_DIR_)/libalx-robot.a
 PHONY += robot_so
-robot_so: $(BUILD_SO_PATH)/libalx-robot.so.$(LIBVERSION)
+robot_so: $(BUILD_SO_DIR_)/libalx-robot.so.$(LIBVERSION)
 
 
 PHONY += extra
@@ -330,65 +330,65 @@ extra: zbar
 PHONY += curl
 curl: curl_a curl_so
 PHONY += curl_a
-curl_a: $(BUILD_A_PATH)/libalx-curl.a
+curl_a: $(BUILD_A_DIR_)/libalx-curl.a
 PHONY += curl_so
-curl_so: $(BUILD_SO_PATH)/libalx-curl.so.$(LIBVERSION)
+curl_so: $(BUILD_SO_DIR_)/libalx-curl.so.$(LIBVERSION)
 
 PHONY += cv
 cv: cv_a cv_so
 PHONY += cv_a
-cv_a: $(BUILD_A_PATH)/libalx-cv.a
+cv_a: $(BUILD_A_DIR_)/libalx-cv.a
 PHONY += cv_so
-cv_so: $(BUILD_SO_PATH)/libalx-cv.so.$(LIBVERSION)
+cv_so: $(BUILD_SO_DIR_)/libalx-cv.so.$(LIBVERSION)
 
 PHONY += gmp
 gmp: gmp_a gmp_so
 PHONY += gmp_a
-gmp_a: $(BUILD_A_PATH)/libalx-gmp.a
+gmp_a: $(BUILD_A_DIR_)/libalx-gmp.a
 PHONY += gmp_so
-gmp_so: $(BUILD_SO_PATH)/libalx-gmp.so.$(LIBVERSION)
+gmp_so: $(BUILD_SO_DIR_)/libalx-gmp.so.$(LIBVERSION)
 
 PHONY += gsl
 gsl: gsl_a gsl_so
 PHONY += gsl_a
-gsl_a: $(BUILD_A_PATH)/libalx-gsl.a
+gsl_a: $(BUILD_A_DIR_)/libalx-gsl.a
 PHONY += gsl_so
-gsl_so: $(BUILD_SO_PATH)/libalx-gsl.so.$(LIBVERSION)
+gsl_so: $(BUILD_SO_DIR_)/libalx-gsl.so.$(LIBVERSION)
 
 PHONY += ncurses
 ncurses: ncurses_a ncurses_so
 PHONY += ncurses_a
-ncurses_a: $(BUILD_A_PATH)/libalx-ncurses.a
+ncurses_a: $(BUILD_A_DIR_)/libalx-ncurses.a
 PHONY += ncurses_so
-ncurses_so: $(BUILD_SO_PATH)/libalx-ncurses.so.$(LIBVERSION)
+ncurses_so: $(BUILD_SO_DIR_)/libalx-ncurses.so.$(LIBVERSION)
 
 PHONY += ocr
 ocr: ocr_a ocr_so
 PHONY += ocr_a
-ocr_a: $(BUILD_A_PATH)/libalx-ocr.a
+ocr_a: $(BUILD_A_DIR_)/libalx-ocr.a
 PHONY += ocr_so
-ocr_so: $(BUILD_SO_PATH)/libalx-ocr.so.$(LIBVERSION)
+ocr_so: $(BUILD_SO_DIR_)/libalx-ocr.so.$(LIBVERSION)
 
 PHONY += plot
 plot: plot_a plot_so
 PHONY += plot_a
-plot_a: $(BUILD_A_PATH)/libalx-plot.a
+plot_a: $(BUILD_A_DIR_)/libalx-plot.a
 PHONY += plot_so
-plot_so: $(BUILD_SO_PATH)/libalx-plot.so.$(LIBVERSION)
+plot_so: $(BUILD_SO_DIR_)/libalx-plot.so.$(LIBVERSION)
 
 PHONY += telnet-tcp
 telnet-tcp: telnet-tcp_a telnet-tcp_so
 PHONY += telnet-tcp_a
-telnet-tcp_a: $(BUILD_A_PATH)/libalx-telnet-tcp.a
+telnet-tcp_a: $(BUILD_A_DIR_)/libalx-telnet-tcp.a
 PHONY += telnet-tcp_so
-telnet-tcp_so: $(BUILD_SO_PATH)/libalx-telnet-tcp.so.$(LIBVERSION)
+telnet-tcp_so: $(BUILD_SO_DIR_)/libalx-telnet-tcp.so.$(LIBVERSION)
 
 PHONY += zbar
 zbar: zbar_a zbar_so
 PHONY += zbar_a
-zbar_a: $(BUILD_A_PATH)/libalx-zbar.a
+zbar_a: $(BUILD_A_DIR_)/libalx-zbar.a
 PHONY += zbar_so
-zbar_so: $(BUILD_SO_PATH)/libalx-zbar.so.$(LIBVERSION)
+zbar_so: $(BUILD_SO_DIR_)/libalx-zbar.so.$(LIBVERSION)
 
 
 %.so.$(LIBVERSION):

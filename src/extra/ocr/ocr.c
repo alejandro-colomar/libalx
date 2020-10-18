@@ -72,16 +72,16 @@ int	alx_ocr_read	(ptrdiff_t bufsiz, char text[static restrict bufsiz],
 		conf_str = "";
 		break;
 	case ALX_OCR_CONF_PRICE:
-		conf_str = ""INSTALL_ETC_DIR"/libalx/extra/ocr/price";
+		conf_str = ""SYSCONFDIR_"/extra/ocr/price";
 		break;
 	case ALX_OCR_CONF_PRICE_EUR:
-		conf_str = ""INSTALL_ETC_DIR"/libalx/extra/ocr/price_eur";
+		conf_str = ""SYSCONFDIR_"/extra/ocr/price_eur";
 		break;
 	case ALX_OCR_CONF_PRICE_GBP:
-		conf_str = ""INSTALL_ETC_DIR"/libalx/extra/ocr/price_gbp";
+		conf_str = ""SYSCONFDIR_"/extra/ocr/price_gbp";
 		break;
 	case ALX_OCR_CONF_PRICE_USD:
-		conf_str = ""INSTALL_ETC_DIR"/libalx/extra/ocr/price_usd";
+		conf_str = ""SYSCONFDIR_"/extra/ocr/price_usd";
 		break;
 	default:
 		return	-3;
