@@ -1,4 +1,3 @@
-##	source	/lib/libalx/sh/sysexits.sh
 ################################################################################
 ##	Copyright (C) 2020	  Alejandro Colomar Andrés		      ##
 ##	SPDX-License-Identifier:  BSD-2-Clause				      ##
@@ -72,7 +71,7 @@
 if [ -n "${SYSEXITS_H}" ]; then
 	return;
 fi
-export	SYSEXITS_H="/lib/libalx/sh/sysexits.sh included"
+export	SYSEXITS_H="/usr/local/lib/libalx/sh/sysexits.sh"
 
 
 ################################################################################
