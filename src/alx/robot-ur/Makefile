@@ -1,7 +1,7 @@
 #! /usr/bin/make -f
 
 ################################################################################
-# Copyright (C) 2019	Alejandro Colomar Andrés
+# Copyright (C) 2020	Alejandro Colomar Andrés
 # SPDX-License-Identifier:	LGPL-2.0-only
 ################################################################################
 # *AUTHOR*
@@ -13,18 +13,19 @@
 # dependencies
 
 MK_DEPS	=								\
-	$(SRC_DIR)/alx/data-structures/Makefile			\
+	$(SRC_DIR)/alx/robot-ur/Makefile				\
 	$(SRC_DIR)/tmp.mk						\
 	$(PROJECT_DIR)/Makefile
 
 MODULES	=								\
-	alx/data-structures/bst						\
-	alx/data-structures/dataframe					\
-	alx/data-structures/dyn-array					\
-	alx/data-structures/dyn-buffer					\
-	alx/data-structures/llist					\
-	alx/data-structures/node					\
-	alx/data-structures/types
+	alx/robot-ur/core/core						\
+	alx/robot-ur/core/msg/msg					\
+	alx/robot-ur/core/msg/robot_state				\
+	alx/robot-ur/io/io						\
+	alx/robot-ur/miscellaneous/miscellaneous			\
+	alx/robot-ur/move/move						\
+	alx/robot-ur/pose/pose						\
+	alx/robot-ur/setup/setup
 
 SRC	= $(MODULES:%=$(SRC_DIR)/%.c)
 DEP	= $(MODULES:%=$(BUILD_TMP_DIR)/%.d)

@@ -15,7 +15,7 @@
 MK_DEPS	=								\
 	$(SRC_DIR)/base/Makefile					\
 	$(SRC_DIR)/tmp.mk						\
-	$(LIBALX_DIR)/Makefile
+	$(PROJECT_DIR)/Makefile
 
 MODULES	=								\
 	base/assert/array						\

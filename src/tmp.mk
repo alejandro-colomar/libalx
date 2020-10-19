@@ -13,21 +13,10 @@
 # target: dependencies
 #	action
 
-%: Makefile
-
-PHONY := all
-all: base alx extra
-
-
 PHONY += base
 base:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/base/
 
-
-PHONY += alx
-alx: data-structures
-#alx: npcomplete
-alx: robot
 
 PHONY += data-structures
 data-structures:
@@ -37,22 +26,14 @@ PHONY += npcomplete
 npcomplete:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
-PHONY += robot
-robot:
-	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/ur/
-#	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/kawasaki/
+PHONY += robot-ur
+robot-ur:
+	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
+#PHONY += robot-kawasaki
+#robot-kawasaki:
+#	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
-PHONY += extra
-extra: curl
-extra: cv
-extra: gmp
-extra: gsl
-extra: ncurses
-extra: ocr
-extra: plot
-extra: telnet-tcp
-extra: zbar
 
 PHONY += curl
 curl:

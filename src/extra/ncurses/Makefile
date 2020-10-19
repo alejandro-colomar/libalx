@@ -15,7 +15,7 @@
 MK_DEPS	=								\
 	$(SRC_DIR)/extra/ncurses/Makefile				\
 	$(SRC_DIR)/tmp.mk						\
-	$(LIBALX_DIR)/Makefile
+	$(PROJECT_DIR)/Makefile
 
 MODULES	=								\
 	extra/ncurses/common						\
