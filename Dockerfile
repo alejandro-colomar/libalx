@@ -12,11 +12,11 @@ RUN									\
 	apt-get update							&& \
 	apt-get upgrade --yes						&& \
 	apt-get install -V \
-			gcc-10 \
-			g++-10 \
-			make \
+			g++ \
+			gcc \
 			git \
-			pkg-config \
+			gnuplot \
+			make \
 			libbsd-dev \
 			libcurl4-openssl-dev \
 			libgmp3-dev \
@@ -25,8 +25,8 @@ RUN									\
 			libopencv-dev \
 			libtesseract-dev \
 			libzbar-dev \
+			pkg-config \
 			telnet \
-			gnuplot \
 			--yes						&& \
 	apt-get autoremove --purge --yes				&& \
 	apt-get autoclean						&& \
