@@ -1,0 +1,32 @@
+name: CI-docker
+
+on:
+    push:
+    pull_request:
+jobs:
+    docker-build:
+        runs-on: ubuntu-20.04
+        steps:
+        -
+            name: install dependencies
+            run: |
+                sudo apt-get install -V                                 \
+                        libbsd-dev                                      \
+                        libcurl4-openssl-dev                            \
+                        libgmp3-dev                                     \
+                        libgsl-dev                                      \
+                        libncurses-dev                                  \
+                        libopencv-dev                                   \
+                        libtesseract-dev                                \
+                        libzbar-dev                                     \
+                        pkg-config                                      \
+                        --yes
+        -
+            name: checkout
+            uses: actions/checkout@v2
+        -
+            name: build
+            run: make;
+        -
+            name: install
+            run: make install;
