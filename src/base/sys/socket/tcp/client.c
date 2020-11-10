@@ -36,8 +36,6 @@ int	get_addrs	(const char *server_addr, const char *server_port,
 			 struct addrinfo **addrs);
 static
 int	set_socket	(struct addrinfo *addrs);
-static
-int	connect_socket	(int sock, struct addrinfo *addr);
 
 
 /******************************************************************************
@@ -95,7 +93,7 @@ int	set_socket	(struct addrinfo *addrs)
 		sock = socket(ad->ai_family, ad->ai_socktype, ad->ai_protocol);
 		if (sock < 0)
 			continue;
-		if (connect_socket(sock, ad))
+		if (connect(sock, ad->ai_addr, ad->ai_addrlen))
 			goto try_next;
 		break;
 	try_next:
@@ -104,12 +102,6 @@ int	set_socket	(struct addrinfo *addrs)
 	}
 
 	return	sock;
-}
-
-static
-int	connect_socket	(int sock, struct addrinfo *addr)
-{
-	return	connect(sock, addr->ai_addr, addr->ai_addrlen);
 }
 
 
