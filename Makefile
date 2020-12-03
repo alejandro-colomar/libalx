@@ -148,6 +148,7 @@ install:
 	$(Q)$(MAKE)	install-zbar-dev
 	$(Q)$(MAKE)	install-sh
 	$(Q)$(MAKE)	install-py
+	$(Q)$(MAKE)	install-libexec
 	$(Q)$(MAKE)	install-doc
 
 INSTALL_LIB_ALX =							\
@@ -174,6 +175,13 @@ install-doc:
 	$(Q)mkdir -p		"$(DESTDIR)$(docdir)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(docdir)/"			\
 				"$(DOC_DIR_)/"
+
+PHONY	+= install-libexec
+install-libexec:
+	@echo	"	INSTALL	$(DESTDIR)$(libexecdir_)/"
+	$(Q)mkdir -p		"$(DESTDIR)$(libexecdir_)/"
+	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libexecdir_)/"		\
+				"$(LIBEXEC_DIR_)/"
 
 PHONY	+= install-sh
 install-sh:

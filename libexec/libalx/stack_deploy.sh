@@ -1,43 +1,57 @@
+#!/bin/bash
+set -Eeo pipefail
 ################################################################################
 ##      Copyright (C) 2020        Alejandro Colomar Andrés                    ##
 ##      SPDX-License-Identifier:  GPL-2.0-only                                ##
 ################################################################################
 ##
-## Change quoted includes to angled includes
-## =========================================
+## Deploy stack
+## ============
 ##
 ################################################################################
 
 
 ################################################################################
-##	include guard							      ##
-################################################################################
-if [ -n "${ALX_INCLUDE_QUOTES_TO_ANGLES_H}" ]; then
-	return;
-fi
-ALX_INCLUDE_QUOTES_TO_ANGLES_H="/usr/local/lib/libalx/sh/include-quotes-to-angles.sh"
-
-
-################################################################################
 ##	source								      ##
 ################################################################################
+source	/usr/local/lib/libalx/sh/containers.sh;
+source	/usr/local/lib/libalx/sh/sysexits.sh;
 
 
 ################################################################################
 ##	definitions							      ##
 ################################################################################
+ARGC=3;
 
 
 ################################################################################
-##	functions							      ##
+##	main								      ##
 ################################################################################
-function include_quotes_to_angles()
+function main()
 {
-	local	fname="$1";
+	local	mode="$1";
+	local	project="$2";
+	local	stack="$3";
 
-	sed "s/include \"/include </"	-i ${fname};
-	sed "/include </s/\"/>/"	-i ${fname};
+	alx_stack_deploy	"${mode}" "${project}" "${stack}";
 }
+
+
+################################################################################
+##	run								      ##
+################################################################################
+argc=$#;
+if [ ${argc} -ne ${ARGC} ]; then
+	echo >&2							\
+'Usage: /usr/local/libexec/libalx/stack_deploy.sh mode projectname stackname
+Mode:
+	kubernetes
+	openshift
+	swarm';
+	exit	${EX_USAGE};
+fi
+
+main	"$1" "$2" "$3";
 
 
 ################################################################################
