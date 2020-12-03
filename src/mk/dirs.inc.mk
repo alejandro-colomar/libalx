@@ -32,6 +32,8 @@ export	INC_DIR_
 export	SRC_DIR
 export	LIB_DIR
 export	LIB_DIR_
+export	LIBEXEC_DIR
+export	LIBEXEC_DIR_
 export	ETC_DIR
 export	ETC_DIR_
 export	SHARE_DIR
@@ -52,7 +54,7 @@ exec_prefix	= $(prefix)
 ## Executable
 bindir		= $(exec_prefix)/bin
 sbindir		= $(exec_prefix)/sbin
-libexecdir	= $(exec_prefix)/libexec/
+libexecdir	= $(exec_prefix)/libexec
 libexecdir_	= $(libexecdir)/$(package_name)
 ## Data
 datarootdir	= $(prefix)/share

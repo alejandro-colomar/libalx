@@ -178,9 +178,9 @@ install-doc:
 
 PHONY	+= install-libexec
 install-libexec:
-	@echo	"	INSTALL	$(DESTDIR)$(libexecdir_)/"
-	$(Q)mkdir -p		"$(DESTDIR)$(libexecdir_)/"
-	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libexecdir_)/"		\
+	@echo	"	INSTALL	$(DESTDIR)$(libexecdir)/"
+	$(Q)mkdir -p		"$(DESTDIR)$(libexecdir)/"
+	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libexecdir)/"		\
 				"$(LIBEXEC_DIR_)/"
 
 PHONY	+= install-sh
