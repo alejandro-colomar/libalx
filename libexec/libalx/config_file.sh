@@ -28,13 +28,13 @@ ARGC=3;
 ################################################################################
 function main()
 {
-	local	config="$1";
+	local	key="$1";
 	local	val="$2";
 	local	file="$3";
 
-	sed -i	"/^[ \t#]*${config}/s/^.*$/${config} ${val}/"  "${file}";
-	grep -q	"^${config} ${val}$"  "${file}"				\
-	|| echo	"${config} ${val}" >> "${file}";
+	sed -i	"/^#*${key}\>/d"  "${file}";
+	echo	"${key} ${val}"						\
+	| tee -a "${file}";
 }
 
 
