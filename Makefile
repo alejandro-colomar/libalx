@@ -344,6 +344,8 @@ uninstall:
 	$(Q)rm -f -r		$(DESTDIR)$(includedir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(libdir_)/"
 	$(Q)rm -f -r		$(DESTDIR)$(libdir_)/
+	@echo	"	RM -rf	$(DESTDIR)$(libexecdir_)/"
+	$(Q)rm -f -r		$(DESTDIR)$(libexecdir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(docdir_)/"
 	$(Q)rm -f -r		$(DESTDIR)$(docdir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(mandir)/*$(package_shortname)"
