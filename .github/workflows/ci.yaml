@@ -8,9 +8,19 @@ jobs:
         runs-on: ubuntu-20.04
         steps:
         -
+            name: checkout
+            uses: actions/checkout@v2
+        -
+            name: docker-run
+            run: docker run -dt --name test debian:testing;
+        -
+            name: apt-get update
+            run: docker exec test apt-get update;
+        -
             name: install dependencies
             run: |
-                sudo apt-get install -V                                 \
+                docker exec test apt-get install -V                     \
+                        build-essential                                 \
                         libbsd-dev                                      \
                         libcurl4-openssl-dev                            \
                         libgmp3-dev                                     \
@@ -20,13 +30,13 @@ jobs:
                         libtesseract-dev                                \
                         libzbar-dev                                     \
                         pkg-config                                      \
-                        --yes
+                        --yes;
         -
-            name: checkout
-            uses: actions/checkout@v2
+            name: cp repo
+            run: docker cp ./ test:/usr/local/src/libalx/;
         -
             name: build
-            run: make;
+            run: docker exec test make -C /usr/local/src/libalx/;
         -
             name: install
-            run: make install;
+            run: docker exec test make install -C /usr/local/src/libalx/;
