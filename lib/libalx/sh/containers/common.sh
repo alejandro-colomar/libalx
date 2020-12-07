@@ -38,7 +38,7 @@ function alx_cp_configs()
 
 	mkdir -pv	/run/configs/;
 	cp --remove-destination -LrvT					\
-			run/configs/${project}/	/run/configs/${project};
+			run/configs/${project}/	/run/configs/${project} ||:;
 }
 
 ## sudo
@@ -60,7 +60,7 @@ function alx_cp_secrets()
 
 	mkdir -pv	/run/secrets/;
 	cp --remove-destination -LrvT					\
-			run/secrets/${project}/	/run/secrets/${project};
+			run/secrets/${project}/	/run/secrets/${project} ||:;
 }
 
 ## sudo
