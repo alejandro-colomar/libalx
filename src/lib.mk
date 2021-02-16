@@ -385,7 +385,7 @@ zbar_so: $(BUILD_SO_DIR_)/libalx-zbar.so.$(LIBVERSION)
 $(BUILD_A_DIR_)/libalx-base.a: $(BASE_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-base.so.$(LIBVERSION): %.$(LIBVERSION): $(BASE_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs libbsd-overlay`		\
 			-l m
@@ -395,7 +395,7 @@ $(BUILD_SO_DIR_)/libalx-base.so.$(LIBVERSION): %.$(LIBVERSION): $(BASE_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-data-structures.a: $(ALX_DS_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-data-structures.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_DS_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
@@ -403,7 +403,7 @@ $(BUILD_SO_DIR_)/libalx-data-structures.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX
 $(BUILD_A_DIR_)/libalx-npcomplete.a: $(ALX_NPC_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-npcomplete.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_NPC_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			-fopenmp					\
 			$(*D)/libalx-base.so.$(LIBVERSION)
@@ -412,7 +412,7 @@ $(BUILD_SO_DIR_)/libalx-npcomplete.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_NPC_
 $(BUILD_A_DIR_)/libalx-robot-ur.a: $(ALX_ROBOT_UR_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-robot-ur.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_ROBOT_UR_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
@@ -420,7 +420,7 @@ $(BUILD_SO_DIR_)/libalx-robot-ur.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_ROBOT_
 $(BUILD_A_DIR_)/libalx-robot-kawasaki.a: $(ALX_ROBOT_KW_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-robot-kawasaki.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_ROBOT_KW_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
@@ -429,7 +429,7 @@ $(BUILD_SO_DIR_)/libalx-robot-kawasaki.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_
 $(BUILD_A_DIR_)/libalx-curl.a: $(CURL_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-curl.so.$(LIBVERSION): %.$(LIBVERSION): $(CURL_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs libcurl`			\
 			$(*D)/libalx-data-structures.so.$(LIBVERSION)\
@@ -439,7 +439,7 @@ $(BUILD_SO_DIR_)/libalx-curl.so.$(LIBVERSION): %.$(LIBVERSION): $(CURL_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-cv.a: $(CV_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-cv.so.$(LIBVERSION): %.$(LIBVERSION): $(CV_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CXX	build/lib/shared/libalx/$(@F)"
+	@echo	"	CXX(LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CXX) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs opencv4`			\
 			$(*D)/libalx-gsl.so.$(LIBVERSION)		\
@@ -451,7 +451,7 @@ $(BUILD_SO_DIR_)/libalx-cv.so.$(LIBVERSION): %.$(LIBVERSION): $(CV_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-gmp.a: $(GMP_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-gmp.so.$(LIBVERSION): %.$(LIBVERSION): $(GMP_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			-l gmp						\
 			$(*D)/libalx-base.so.$(LIBVERSION)
@@ -460,7 +460,7 @@ $(BUILD_SO_DIR_)/libalx-gmp.so.$(LIBVERSION): %.$(LIBVERSION): $(GMP_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-gsl.a: $(GSL_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-gsl.so.$(LIBVERSION): %.$(LIBVERSION): $(GSL_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs gsl`				\
 			$(*D)/libalx-base.so.$(LIBVERSION)
@@ -469,7 +469,7 @@ $(BUILD_SO_DIR_)/libalx-gsl.so.$(LIBVERSION): %.$(LIBVERSION): $(GSL_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-ncurses.a: $(NCURSES_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-ncurses.so.$(LIBVERSION): %.$(LIBVERSION): $(NCURSES_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs ncurses`			\
 			$(*D)/libalx-base.so.$(LIBVERSION)
@@ -478,7 +478,7 @@ $(BUILD_SO_DIR_)/libalx-ncurses.so.$(LIBVERSION): %.$(LIBVERSION): $(NCURSES_SO_
 $(BUILD_A_DIR_)/libalx-ocr.a: $(OCR_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-ocr.so.$(LIBVERSION): %.$(LIBVERSION): $(OCR_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs tesseract`			\
 			$(*D)/libalx-base.so.$(LIBVERSION)
@@ -487,7 +487,7 @@ $(BUILD_SO_DIR_)/libalx-ocr.so.$(LIBVERSION): %.$(LIBVERSION): $(OCR_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-plot.a: $(PLOT_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-plot.so.$(LIBVERSION): %.$(LIBVERSION): $(PLOT_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
@@ -495,7 +495,7 @@ $(BUILD_SO_DIR_)/libalx-plot.so.$(LIBVERSION): %.$(LIBVERSION): $(PLOT_SO_OBJ)
 $(BUILD_A_DIR_)/libalx-telnet-tcp.a: $(TELNET_TCP_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-telnet-tcp.so.$(LIBVERSION): %.$(LIBVERSION): $(TELNET_TCP_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
@@ -503,7 +503,7 @@ $(BUILD_SO_DIR_)/libalx-telnet-tcp.so.$(LIBVERSION): %.$(LIBVERSION): $(TELNET_T
 $(BUILD_A_DIR_)/libalx-zbar.a: $(ZBAR_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-zbar.so.$(LIBVERSION): %.$(LIBVERSION): $(ZBAR_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC	build/lib/shared/libalx/$(@F)"
+	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
 			`pkg-config --libs zbar`			\
 			$(*D)/libalx-base.so.$(LIBVERSION)
