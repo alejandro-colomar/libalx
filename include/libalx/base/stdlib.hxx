@@ -31,7 +31,6 @@
 #include <libalx/base/stdlib/alloc/reallocs.hxx>
 #include <libalx/base/stdlib/getenv/getenv_f.hxx>
 #include <libalx/base/stdlib/getenv/getenv_i.hxx>
-#include <libalx/base/stdlib/getenv/getenv_s.hxx>
 #include <libalx/base/stdlib/getenv/getenv_u.hxx>
 #include <libalx/base/stdlib/strto/strtof_s.hxx>
 #include <libalx/base/stdlib/strto/strtoi_s.hxx>

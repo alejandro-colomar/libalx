@@ -70,7 +70,6 @@ BASE_MODULES	=							\
 		base/stdlib/ctz						\
 		base/stdlib/getenv/getenv_f				\
 		base/stdlib/getenv/getenv_i				\
-		base/stdlib/getenv/getenv_s				\
 		base/stdlib/getenv/getenv_u				\
 		base/stdlib/lmax					\
 		base/stdlib/popcnt					\
