@@ -39,12 +39,12 @@ void	alx_ncurses_perror__	(WINDOW *restrict win,
 				 const char *restrict str)
 {
 
-	mvwprintw(win, 0, 0, "%s: ", program_invocation_name);
-	mvwprintw(win, 1, 0, "%s:%i: ", file, line);
-	mvwprintw(win, 2, 0, "%s(): ", func);
+	mvwprintw(win, 0, 0, "%s: [ERROR]: %s", program_invocation_name,
+					strerrorname_np(errno));
+	mvwprintw(win, 1, 0, "%s:%i ", file, line);
+	mvwprintw(win, 2, 0, "%s() ", func);
 	if (str)
 		mvwprintw(win, 3, 0, "	%s\n", str);
-	mvwprintw(win, 4, 0, "E%i -	%s\n", errno, strerror(errno));
 
 	wrefresh(win);
 	/* Wait for any key */

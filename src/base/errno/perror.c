@@ -49,15 +49,15 @@ void	alx__vperrorx__	(const char *restrict file, int line,
 			 const char *restrict format, va_list ap)
 {
 
-	fprintf(stderr, "%s:\n", program_invocation_name);
-	fprintf(stderr, "	%s:%i:\n", file, line);
-	fprintf(stderr, "	%s():\n", func);
+	fprintf(stderr, "%s: [ERROR]: %s\n", program_invocation_name,
+					strerrorname_np(errno_val));
+	fprintf(stderr, "	%s:%i\n", file, line);
+	fprintf(stderr, "	%s()\n", func);
 	if (format) {
-		fputs("\t\t", stderr);
+		fprintf(stderr, "\t\t");
 		vfprintf(stderr, format, ap);
 		fputc('\n', stderr);
 	}
-	fprintf(stderr, "	E%i -	%s\n", errno_val, strerror(errno_val));
 }
 
 
