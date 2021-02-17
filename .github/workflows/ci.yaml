@@ -17,22 +17,18 @@ jobs:
             name: apt-get update
             run: docker exec test apt-get update;
         -
-            name: install dependencies
+            name: install dependencies (tools)
             run: |
                 docker exec test apt-get install -V                     \
                         build-essential                                 \
-                        libbsd-dev                                      \
-                        libgmp3-dev                                     \
-                        libgsl-dev                                      \
-                        libncurses-dev                                  \
-                        libopencv-dev                                   \
-                        libtesseract-dev                                \
-                        libzbar-dev                                     \
                         pkg-config                                      \
                         --yes;
         -
             name: cp repo
             run: docker cp ./ test:/usr/local/src/libalx/;
+        -
+            name: install dependencies (libs)
+            run: docker exec test make prereq -C /usr/local/src/libalx/;
         -
             name: build
             run: docker exec test make -C /usr/local/src/libalx/;
