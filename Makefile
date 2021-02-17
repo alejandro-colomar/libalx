@@ -49,7 +49,6 @@ COMPILE_TARGETS	=							\
 	base								\
 	data-structures							\
 	robot-ur							\
-	curl								\
 	cv								\
 	gmp								\
 	gsl								\
@@ -81,8 +80,6 @@ robot-ur: | robot-ur_tmp robot-ur_lib
 #robot-kawasaki: | robot-kawasaki_tmp robot-kawasaki_lib
 
 
-PHONY	+= curl
-curl: | curl_tmp curl_lib
 PHONY	+= cv
 cv: | cv_tmp cv_lib
 PHONY	+= gmp
@@ -107,7 +104,6 @@ COMPILE_ACTUAL_TMP_TARGETS	= $(COMPILE_TARGETS:=_tmp)
 COMPILE_ACTUAL_LIB_TARGETS	= $(COMPILE_TARGETS:=_lib)
 
 $(filter-out base_lib, $(COMPILE_ACTUAL_LIB_TARGETS)): base_lib
-curl_lib: data-structures_lib
 cv_lib: gsl_lib
 
 PHONY	+= $(COMPILE_ACTUAL_TMP_TARGETS)
@@ -128,8 +124,6 @@ install:
 	$(Q)$(MAKE)	install-data-structures-dev
 	$(Q)$(MAKE)	install-robot-ur
 	$(Q)$(MAKE)	install-robot-ur-dev
-	$(Q)$(MAKE)	install-curl
-	$(Q)$(MAKE)	install-curl-dev
 	$(Q)$(MAKE)	install-gmp
 	$(Q)$(MAKE)	install-gmp-dev
 	$(Q)$(MAKE)	install-gsl
@@ -156,7 +150,6 @@ INSTALL_LIB_ALX =							\
 	install-robot-ur
 
 INSTALL_LIB_EXTRA =							\
-	install-curl							\
 	install-cv							\
 	install-gmp							\
 	install-gsl							\

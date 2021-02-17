@@ -18,7 +18,6 @@ RUN									\
 			gnuplot \
 			make \
 			libbsd-dev \
-			libcurl4-openssl-dev \
 			libgmp3-dev \
 			libgsl-dev \
 			libncurses-dev \

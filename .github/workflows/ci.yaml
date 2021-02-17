@@ -22,7 +22,6 @@ jobs:
                 docker exec test apt-get install -V                     \
                         build-essential                                 \
                         libbsd-dev                                      \
-                        libcurl4-openssl-dev                            \
                         libgmp3-dev                                     \
                         libgsl-dev                                      \
                         libncurses-dev                                  \

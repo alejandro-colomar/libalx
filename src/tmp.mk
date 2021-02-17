@@ -35,10 +35,6 @@ robot-ur:
 #	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
 
-PHONY += curl
-curl:
-	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
-
 PHONY += cv
 cv:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/

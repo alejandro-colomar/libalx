@@ -148,20 +148,6 @@ ALX_ROBOT_KW_MODULES	=						\
 ALX_ROBOT_KW_A_OBJ	= $(ALX_ROBOT_KW_MODULES:%=$(BUILD_TMP_DIR)/%.a.o)
 ALX_ROBOT_KW_SO_OBJ	= $(ALX_ROBOT_KW_MODULES:%=$(BUILD_TMP_DIR)/%.so.o)
 
-CURL_MODULES	=							\
-		extra/curl/fcurl/fclose					\
-		extra/curl/fcurl/feof					\
-		extra/curl/fcurl/fgetc					\
-		extra/curl/fcurl/fgets					\
-		extra/curl/fcurl/fopen					\
-		extra/curl/fcurl/fread					\
-		extra/curl/fcurl/init					\
-		extra/curl/fcurl/internal				\
-		extra/curl/fcurl/rewind					\
-		extra/curl/fcurl/ungetc					\
-		extra/curl/fcurl/URL_FILE
-CURL_A_OBJ	= $(CURL_MODULES:%=$(BUILD_TMP_DIR)/%.a.o)
-CURL_SO_OBJ	= $(CURL_MODULES:%=$(BUILD_TMP_DIR)/%.so.o)
 CV_MODULES	=							\
 		extra/cv/alx/compare					\
 		extra/cv/alx/gray					\
@@ -310,13 +296,6 @@ PHONY += robot-kawasaki_so
 robot-kawasaki_so: $(BUILD_SO_DIR_)/libalx-robot-kawasaki.so.$(LIBVERSION)
 
 
-PHONY += curl
-curl: curl_a curl_so
-PHONY += curl_a
-curl_a: $(BUILD_A_DIR_)/libalx-curl.a
-PHONY += curl_so
-curl_so: $(BUILD_SO_DIR_)/libalx-curl.so.$(LIBVERSION)
-
 PHONY += cv
 cv: cv_a cv_so
 PHONY += cv_a
@@ -425,16 +404,6 @@ $(BUILD_SO_DIR_)/libalx-robot-kawasaki.so.$(LIBVERSION): %.$(LIBVERSION): $(ALX_
 			$(*D)/libalx-base.so.$(LIBVERSION)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
 
-
-$(BUILD_A_DIR_)/libalx-curl.a: $(CURL_A_OBJ)
-$(BUILD_SO_DIR_)/libalx-curl.so.$(LIBVERSION): %.$(LIBVERSION): $(CURL_SO_OBJ)
-	$(Q)mkdir -p		$(@D)/
-	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
-	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
-			`pkg-config --libs libcurl`			\
-			$(*D)/libalx-data-structures.so.$(LIBVERSION)\
-			$(*D)/libalx-base.so.$(LIBVERSION)
-	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
 
 $(BUILD_A_DIR_)/libalx-cv.a: $(CV_A_OBJ)
 $(BUILD_SO_DIR_)/libalx-cv.so.$(LIBVERSION): %.$(LIBVERSION): $(CV_SO_OBJ)

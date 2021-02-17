@@ -20,11 +20,6 @@ data-structures:
 robot:
 	+ base
 
-curl:
-	+ base
-	+ data-structures
-	- libcurl-*-dev
-
 cv:
 	+ base
 	+ gsl
