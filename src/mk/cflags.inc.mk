@@ -20,7 +20,7 @@ CFLAGS_D	= -D _GNU_SOURCE
 CFLAGS_D       += -D _POSIX_C_SOURCE=200809L
 CFLAGS_D       += $(CPP_DEFINITIONS)
 
-CFLAGS_PKG	= `pkg-config --cflags libbsd-overlay`
+CFLAGS_PKG	= `pkg-config --cflags libbsd`
 
 CFLAGS_I	= -I $(INC_DIR)
 

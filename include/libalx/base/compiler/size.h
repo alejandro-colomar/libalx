@@ -22,7 +22,7 @@
 #include <limits.h>
 #include <stddef.h>
 
-#include <sys/cdefs.h>
+#include <bsd/sys/cdefs.h>
 #include <sys/types.h>
 
 #include "libalx/base/assert/array.h"

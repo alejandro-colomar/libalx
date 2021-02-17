@@ -366,7 +366,7 @@ $(BUILD_SO_DIR_)/libalx-base.so.$(LIBVERSION): %.$(LIBVERSION): $(BASE_SO_OBJ)
 	$(Q)mkdir -p		$(@D)/
 	@echo	"	CC (LD)	build/lib/shared/libalx/$(@F)"
 	$(Q)$(CC) $(LDFLAGS) -Wl,-soname,$(*F).$(VERSION) -o $@ $^	\
-			`pkg-config --libs libbsd-overlay`		\
+			`pkg-config --libs libbsd`		\
 			-l m
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
 

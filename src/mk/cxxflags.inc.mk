@@ -19,7 +19,7 @@ CXXFLAGS_D	= -D _GNU_SOURCE
 CXXFLAGS_D     += -D _POSIX_C_SOURCE=200809L
 CXXFLAGS_D     += $(CPP_DEFINITIONS)
 
-CXXFLAGS_PKG	= `pkg-config --cflags libbsd-overlay`
+CXXFLAGS_PKG	= `pkg-config --cflags libbsd`
 
 CXXFLAGS_I	= -I $(INC_DIR)
 

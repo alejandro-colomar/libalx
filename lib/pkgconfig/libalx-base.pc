@@ -2,7 +2,7 @@ Name: libalx-base
 Description: The libalx C/C++ library (base module)
 URL: https://github.com/alejandro-colomar/libalx
 Version: <version>
-Requires: libbsd-overlay
+Requires: libbsd
 Requires.private:
 
 prefix=/usr/local

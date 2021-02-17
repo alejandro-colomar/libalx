@@ -11,8 +11,7 @@
 
 #include <errno.h>
 #include <limits.h>
-#include <stdlib.h>
-
+#include <bsd/stdlib.h>
 #include <sys/types.h>
 
 

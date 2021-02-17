@@ -10,7 +10,7 @@
 #include "libalx/base/string/strcpy/strlcpys.h"
 
 #include <stddef.h>
-#include <string.h>
+#include <bsd/string.h>
 
 
 /******************************************************************************
