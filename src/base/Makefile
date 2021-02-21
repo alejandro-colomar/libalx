@@ -85,7 +85,6 @@ MODULES	=								\
 	base/stdlib/popcnt						\
 	base/stdlib/pow							\
 	base/stdlib/search						\
-	base/stdlib/seed						\
 	base/stdlib/strto/strtof_s					\
 	base/stdlib/strto/strtoi_s					\
 	base/stdlib/strto/strtou_s					\

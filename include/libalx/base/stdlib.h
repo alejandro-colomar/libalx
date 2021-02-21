@@ -45,7 +45,6 @@
 #include <libalx/base/stdlib/popcnt.h>
 #include <libalx/base/stdlib/pow.h>
 #include <libalx/base/stdlib/search.h>
-#include <libalx/base/stdlib/seed.h>
 #include <libalx/base/stdlib/swap.h>
 
 
