@@ -151,9 +151,7 @@ install:
 	$(Q)$(MAKE)	install-telnet-tcp-dev
 	$(Q)$(MAKE)	install-zbar
 	$(Q)$(MAKE)	install-zbar-dev
-	$(Q)$(MAKE)	install-sh
 	$(Q)$(MAKE)	install-py
-	$(Q)$(MAKE)	install-libexec
 	$(Q)$(MAKE)	install-doc
 
 INSTALL_LIB_ALX =							\
@@ -179,20 +177,6 @@ install-doc:
 	$(Q)mkdir -p		"$(DESTDIR)$(docdir)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(docdir)/"			\
 				"$(DOC_DIR_)/"
-
-PHONY	+= install-libexec
-install-libexec:
-	@echo	"	INSTALL	$(DESTDIR)$(libexecdir)/"
-	$(Q)mkdir -p		"$(DESTDIR)$(libexecdir)/"
-	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libexecdir)/"		\
-				"$(LIBEXEC_DIR_)/"
-
-PHONY	+= install-sh
-install-sh:
-	@echo	"	INSTALL	$(DESTDIR)$(libdir_)/sh/"
-	$(Q)mkdir -p		"$(DESTDIR)$(libdir_)/"
-	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libdir_)/"			\
-				"$(LIB_DIR_)/sh/"
 
 PHONY	+= install-py
 install-py:
@@ -348,8 +332,6 @@ uninstall:
 	$(Q)rm -f -r		$(DESTDIR)$(includedir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(libdir_)/"
 	$(Q)rm -f -r		$(DESTDIR)$(libdir_)/
-	@echo	"	RM -rf	$(DESTDIR)$(libexecdir_)/"
-	$(Q)rm -f -r		$(DESTDIR)$(libexecdir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(docdir_)/"
 	$(Q)rm -f -r		$(DESTDIR)$(docdir_)/
 	@echo	"	RM -rf	$(DESTDIR)$(mandir)/*$(package_shortname)"
