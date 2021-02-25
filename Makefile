@@ -159,7 +159,6 @@ install:
 	$(Q)$(MAKE)	install-telnet-tcp-dev
 	$(Q)$(MAKE)	install-zbar
 	$(Q)$(MAKE)	install-zbar-dev
-	$(Q)$(MAKE)	install-py
 	$(Q)$(MAKE)	install-doc
 
 INSTALL_LIB_ALX =							\
@@ -185,13 +184,6 @@ install-doc:
 	$(Q)mkdir -p		"$(DESTDIR)$(docdir)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(docdir)/"			\
 				"$(DOC_DIR_)/"
-
-PHONY	+= install-py
-install-py:
-	@echo	"	INSTALL	$(DESTDIR)$(libdir_)/py/"
-	$(Q)mkdir -p		"$(DESTDIR)$(libdir_)/"
-	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libdir_)/"			\
-				"$(LIB_DIR_)/py/"
 
 PHONY += install-base
 install-base: install-%: | _inst-%-etc _inst-%-lib _inst-ld
