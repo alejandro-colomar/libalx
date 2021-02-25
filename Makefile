@@ -92,32 +92,51 @@ COMPILE_ACTUAL_LIB_TARGETS	= $(COMPILE_TARGETS:=_lib)
 $(filter-out base_lib, $(COMPILE_ACTUAL_LIB_TARGETS)): base_lib
 cv_lib: gsl_lib
 
-PHONY	+= $(COMPILE_ACTUAL_TMP_TARGETS)
+PHONY += $(COMPILE_ACTUAL_TMP_TARGETS)
 $(COMPILE_ACTUAL_TMP_TARGETS): %_tmp:
 	$(Q)$(MAKE) $*	-f tmp.mk	-C $(SRC_DIR)
-PHONY	+= $(COMPILE_ACTUAL_LIB_TARGETS)
+PHONY += $(COMPILE_ACTUAL_LIB_TARGETS)
 $(COMPILE_ACTUAL_LIB_TARGETS): %_lib: %_tmp
 	$(Q)$(MAKE) $*	-f lib.mk	-C $(SRC_DIR)
 
 
 ################################################################################
 # prerequisites
-prereq:
+
+PREREQ_TARGETS	= $(addprefix prereq-,$(COMPILE_TARGETS))
+
+PHONY += prereq
+prereq: $(PREREQ_TARGETS)
+
+$(filter-out prereq-base, $(PREREQ_TARGETS)): prereq-base
+prereq-cv: | prereq-gsl
+
+PHONY += $(PREREQ_TARGETS)
+prereq-base:
 	apt-get install -V build-essential;
 	apt-get install -V git;
 	apt-get install -V libbsd-dev;
-	apt-get install -V libgmp-dev;
-	apt-get install -V libgsl-dev;
-	apt-get install -V libncurses-dev;
-	apt-get install -V libopencv-dev;
-	apt-get install -V libtesseract-dev;
-	apt-get install -V libzbar-dev;
 	apt-get install -V pkg-config;
-
-# recommended
-recommended:
+prereq-cv:
+	apt-get install -V libopencv-dev;
+prereq-gmp:
+	apt-get install -V libgmp-dev;
+prereq-gsl:
+	apt-get install -V libgsl-dev;
+prereq-ncurses:
+	apt-get install -V libncurses-dev;
+prereq-ocr:
+	apt-get install -V libtesseract-dev;
+	apt-get install -V tesseract-ocr-cat;
+	apt-get install -V tesseract-ocr-eng;
+	apt-get install -V tesseract-ocr-spa;
+	apt-get install -V tesseract-ocr-spa-old;
+prereq-plot:
 	apt-get install -V gnuplot;
+prereq-telnet-tcp:
 	apt-get install -V telnet;
+prereq-zbar:
+	apt-get install -V libzbar-dev;
 
 ################################################################################
 # install
