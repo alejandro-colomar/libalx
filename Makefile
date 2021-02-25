@@ -117,13 +117,21 @@ $(COMPILE_ACTUAL_LIB_TARGETS): %_lib: %_tmp
 ################################################################################
 # prerequisites
 prereq:
-	apt-get install libbsd-dev;
-	apt-get install libncurses-dev;
-	apt-get install libopencv-dev;
-	apt-get install libtesseract-dev;
-	apt-get install libgsl-dev;
-	apt-get install libgmp-dev;
-	apt-get install libzbar-dev;
+	apt-get install -V build-essential;
+	apt-get install -V git;
+	apt-get install -V libbsd-dev;
+	apt-get install -V libgmp-dev;
+	apt-get install -V libgsl-dev;
+	apt-get install -V libncurses-dev;
+	apt-get install -V libopencv-dev;
+	apt-get install -V libtesseract-dev;
+	apt-get install -V libzbar-dev;
+	apt-get install -V pkg-config;
+
+# recommended
+recommended:
+	apt-get install -V gnuplot;
+	apt-get install -V telnet;
 
 ################################################################################
 # install
