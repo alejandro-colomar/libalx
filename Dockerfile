@@ -8,33 +8,19 @@
 ########################################################################
 FROM	"debian:unstable"
 ########################################################################
+COPY	./	/usr/local/src/libalx/
+########################################################################
+WORKDIR	/usr/local/src/libalx/
+########################################################################
 RUN									\
 	apt-get update							\
 	&&apt-get upgrade --yes						\
-	&&apt-get install -V \
-			g++ \
-			gcc \
-			git \
-			gnuplot \
-			make \
-			libbsd-dev \
-			libgmp3-dev \
-			libgsl-dev \
-			libncurses-dev \
-			libopencv-dev \
-			libtesseract-dev \
-			libzbar-dev \
-			pkg-config \
-			telnet \
-			--yes						\
+	&&apt-get install -V make --yes					\
+	&&yes | make prereq						\
 	&&apt-get autoremove --purge --yes				\
 	&&apt-get autoclean						\
 	&&apt-get clean
 
-########################################################################
-COPY	./	/usr/local/src/libalx/
-########################################################################
-WORKDIR	/usr/local/src/libalx/
 ########################################################################
 RUN									\
 	make								\
