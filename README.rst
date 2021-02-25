@@ -6,53 +6,10 @@ libalx
 C/C++ library.
 This library provides extensions to glibc and other libraries.
 
-Modules and dependencies:
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Modules
+~~~~~~~
 
-base:
-	- gcc (>= 10)
-	- libbsd-dev
-	- pkg-config
-
-data-structures:
-	+ base
-
-robot:
-	+ base
-
-cv:
-	+ base
-	+ gsl
-	- g++ (>= 10)
-	- libopencv-dev (>= 4)
-
-gmp:
-	+ base
-	- libgmp-dev
-
-gsl:
-	+ base
-	- libgsl-dev
-
-ncurses:
-	+ base
-	- libncurses-dev
-
-ocr:
-	+ base
-	- libtesseract-dev
-
-plot:
-	+ base
-	- gnuplot
-
-telnet-tcp:
-	+ base
-	- telnet
-
-zbar:
-	+ base
-	- libzbar-dev
+base, data-structures, robot, cv, gmp, gsl, ncurses, ocr, plot, telnet-tcp, zbar
 
 The majority of the library is licensed with LGPL-2.0-only, which basically
 means that you can use it for whatever you want (open-source or closed-source),
