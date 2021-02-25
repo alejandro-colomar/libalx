@@ -62,7 +62,6 @@ COMPILE_TARGETS	=							\
 PHONY := all
 all: $(COMPILE_TARGETS)
 
-
 PHONY	+= $(COMPILE_TARGETS)
 $(COMPILE_TARGETS):
 
@@ -99,7 +98,6 @@ PHONY += $(COMPILE_ACTUAL_LIB_TARGETS)
 $(COMPILE_ACTUAL_LIB_TARGETS): %_lib: %_tmp
 	$(Q)$(MAKE) $*	-f lib.mk	-C $(SRC_DIR)
 
-
 ################################################################################
 # prerequisites
 
@@ -127,10 +125,7 @@ prereq-ncurses:
 	apt-get install -V libncurses-dev;
 prereq-ocr:
 	apt-get install -V libtesseract-dev;
-	apt-get install -V tesseract-ocr-cat;
 	apt-get install -V tesseract-ocr-eng;
-	apt-get install -V tesseract-ocr-spa;
-	apt-get install -V tesseract-ocr-spa-old;
 prereq-plot:
 	apt-get install -V gnuplot;
 prereq-telnet-tcp:
