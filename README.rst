@@ -11,6 +11,9 @@ Modules
 
 base, data-structures, robot, cv, gmp, gsl, ncurses, ocr, plot, telnet-tcp, zbar
 
+License
+~~~~~~~
+
 The majority of the library is licensed with LGPL-2.0-only, which basically
 means that you can use it for whatever you want (open-source or closed-source),
 but if you improve it, those improvements should be open-source.  Read
