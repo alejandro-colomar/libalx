@@ -11,27 +11,5 @@ jobs:
             name: checkout
             uses: actions/checkout@v2
         -
-            name: docker-run
-            run: docker run -dt --name test debian:testing;
-        -
-            name: apt-get update
-            run: docker exec test apt-get update;
-        -
-            name: install dependencies (tools)
-            run: |
-                docker exec test apt-get install -V                     \
-                        build-essential                                 \
-                        pkg-config                                      \
-                        --yes;
-        -
-            name: cp repo
-            run: docker cp ./ test:/usr/local/src/libalx/;
-        -
-            name: install dependencies (libs)
-            run: docker exec test make prereq -C /usr/local/src/libalx/;
-        -
-            name: build
-            run: docker exec test make -C /usr/local/src/libalx/;
-        -
-            name: install
-            run: docker exec test make install -C /usr/local/src/libalx/;
+            name: docker-build
+            run: docker build -t 'alejandrocolomar/libalx:ci' .;
