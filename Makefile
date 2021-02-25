@@ -63,38 +63,24 @@ PHONY := all
 all: $(COMPILE_TARGETS)
 
 
+PHONY	+= $(COMPILE_TARGETS)
 $(COMPILE_TARGETS):
 
 
-PHONY	+= base_tmp
 base: | base_tmp base_lib
 
-
-PHONY	+= data-structures
 data-structures: | data-structures_tmp data-structures_lib
-#PHONY	+= npcomplete
 #npcomplete: | npcomplete_tmp npcomplete_lib
-PHONY	+= robot-ur
 robot-ur: | robot-ur_tmp robot-ur_lib
-#PHONY	+= robot-kawasaki
 #robot-kawasaki: | robot-kawasaki_tmp robot-kawasaki_lib
 
-
-PHONY	+= cv
 cv: | cv_tmp cv_lib
-PHONY	+= gmp
 gmp: | gmp_tmp gmp_lib
-PHONY	+= gsl
 gsl: | gsl_tmp gsl_lib
-PHONY	+= ncurses
 ncurses: | ncurses_tmp ncurses_lib
-PHONY	+= ocr
 ocr: | ocr_tmp ocr_lib
-PHONY	+= plot
 plot: | plot_tmp plot_lib
-PHONY	+= telnet-tcp
 telnet-tcp: | telnet-tcp_tmp telnet-tcp_lib
-PHONY	+= zbar
 zbar: | zbar_tmp zbar_lib
 
 ################################################################################
@@ -197,23 +183,21 @@ PHONY += install-base
 install-base: install-%: | _inst-%-etc _inst-%-lib _inst-ld
 	$(Q)$(MAKE) ldconfig
 
+PHONY += install-base-dev
 PHONY += $(INSTALL_LIB_ALX)
+PHONY += $(INSTALL_LIB_EXTRA)
+PHONY += $(INSTALL_DEV_ALX)
+PHONY += $(INSTALL_DEV_EXTRA)
+
+
 $(INSTALL_LIB_ALX): install-%: | _inst-alx-%-etc _inst-%-lib _inst-ld
 	$(Q)$(MAKE) ldconfig
-
-PHONY += $(INSTALL_LIB_EXTRA)
 $(INSTALL_LIB_EXTRA): install-%: | _inst-extra-%-etc _inst-%-lib _inst-ld
 	$(Q)$(MAKE) ldconfig
-
-PHONY += install-base-dev
 install-base-dev: install-%-dev: | _inst-base-man _inst-base-inc _inst-%-pc
 	@:
-
-PHONY += $(INSTALL_DEV_ALX)
 $(INSTALL_DEV_ALX): install-%-dev: | _inst-alx-%-man _inst-alx-%-inc _inst-%-pc
 	@:
-
-PHONY += $(INSTALL_DEV_EXTRA)
 $(INSTALL_DEV_EXTRA): install-%-dev: | _inst-extra-%-man _inst-extra-%-inc _inst-%-pc
 	@:
 
