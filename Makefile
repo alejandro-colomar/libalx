@@ -111,27 +111,27 @@ prereq-cv: | prereq-gsl
 
 PHONY += $(PREREQ_TARGETS)
 prereq-base:
-	apt-get install -V build-essential;
-	apt-get install -V git;
-	apt-get install -V libbsd-dev;
-	apt-get install -V pkg-config;
+	apt-get install -V --no-install-recommends build-essential;
+	apt-get install -V --no-install-recommends git;
+	apt-get install -V --no-install-recommends libbsd-dev;
+	apt-get install -V --no-install-recommends pkg-config;
 prereq-cv:
-	apt-get install -V libopencv-dev;
+	apt-get install -V --no-install-recommends libopencv-dev;
 prereq-gmp:
-	apt-get install -V libgmp-dev;
+	apt-get install -V --no-install-recommends libgmp-dev;
 prereq-gsl:
-	apt-get install -V libgsl-dev;
+	apt-get install -V --no-install-recommends libgsl-dev;
 prereq-ncurses:
-	apt-get install -V libncurses-dev;
+	apt-get install -V --no-install-recommends libncurses-dev;
 prereq-ocr:
-	apt-get install -V libtesseract-dev;
-	apt-get install -V tesseract-ocr-eng;
+	apt-get install -V --no-install-recommends libtesseract-dev;
+	apt-get install -V --no-install-recommends tesseract-ocr-eng;
 prereq-plot:
-	apt-get install -V gnuplot;
+	apt-get install -V --no-install-recommends gnuplot;
 prereq-telnet-tcp:
-	apt-get install -V telnet;
+	apt-get install -V --no-install-recommends telnet;
 prereq-zbar:
-	apt-get install -V libzbar-dev;
+	apt-get install -V --no-install-recommends libzbar-dev;
 
 ################################################################################
 # install
