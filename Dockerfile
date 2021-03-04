@@ -11,13 +11,13 @@ COPY	./	/usr/local/src/libalx/
 
 WORKDIR	/usr/local/src/libalx/
 
-RUN	apt-get update \
-	&&apt-get upgrade --yes \
-	&&apt-get install -V make --yes \
-	&&yes | make prereq \
-	&&apt-get autoremove --purge --yes \
-	&&apt-get autoclean \
-	&&apt-get clean
+RUN	apt-get update &&\
+	apt-get upgrade --yes &&\
+	apt-get install -V make --yes &&\
+	yes | make prereq &&\
+	apt-get autoremove --purge --yes &&\
+	apt-get autoclean &&\
+	apt-get clean
 
-RUN	make \
-	&&make install
+RUN	make &&\
+	make install
