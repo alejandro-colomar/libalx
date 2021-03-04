@@ -35,7 +35,7 @@ CFLAGS_SO	+= `pkg-config --cflags tesseract`
 # target: dependencies
 #	action
 
-PHONY := all
+.PHONY: all
 all: $(BOTH_OBJ)
 	@:
 
@@ -62,13 +62,12 @@ $(BUILD_TMP_DIR)/%.o: $(BUILD_TMP_DIR)/%.s
 include $(DEP)
 
 
-PHONY += clean
+.PHONY: clean
 clean:
 	$(Q)rm -f *.o *.s
 
 ################################################################################
 # Declare the contents of the .PHONY variable as phony.
-.PHONY: $(PHONY)
 
 
 ################################################################################

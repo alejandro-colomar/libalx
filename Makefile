@@ -59,10 +59,10 @@ COMPILE_TARGETS	=							\
 	zbar
 
 
-PHONY := all
+.PHONY: all
 all: $(COMPILE_TARGETS)
 
-PHONY	+= $(COMPILE_TARGETS)
+.PHONY: $(COMPILE_TARGETS)
 $(COMPILE_TARGETS):
 
 
@@ -91,10 +91,10 @@ COMPILE_ACTUAL_LIB_TARGETS	= $(COMPILE_TARGETS:=_lib)
 $(filter-out base_lib, $(COMPILE_ACTUAL_LIB_TARGETS)): base_lib
 cv_lib: gsl_lib
 
-PHONY += $(COMPILE_ACTUAL_TMP_TARGETS)
+.PHONY: $(COMPILE_ACTUAL_TMP_TARGETS)
 $(COMPILE_ACTUAL_TMP_TARGETS): %_tmp:
 	$(Q)$(MAKE) $*	-f tmp.mk	-C $(SRC_DIR)
-PHONY += $(COMPILE_ACTUAL_LIB_TARGETS)
+.PHONY: $(COMPILE_ACTUAL_LIB_TARGETS)
 $(COMPILE_ACTUAL_LIB_TARGETS): %_lib: %_tmp
 	$(Q)$(MAKE) $*	-f lib.mk	-C $(SRC_DIR)
 
@@ -103,13 +103,13 @@ $(COMPILE_ACTUAL_LIB_TARGETS): %_lib: %_tmp
 
 PREREQ_TARGETS	= $(addprefix prereq-,$(COMPILE_TARGETS))
 
-PHONY += prereq
+.PHONY: prereq
 prereq: $(PREREQ_TARGETS)
 
 $(filter-out prereq-base, $(PREREQ_TARGETS)): prereq-base
 prereq-cv: | prereq-gsl
 
-PHONY += $(PREREQ_TARGETS)
+.PHONY: $(PREREQ_TARGETS)
 prereq-base:
 	apt-get install -V --no-install-recommends build-essential;
 	apt-get install -V --no-install-recommends git;
@@ -178,22 +178,22 @@ INSTALL_LIB_EXTRA =							\
 INSTALL_DEV_ALX = $(INSTALL_LIB_ALX:=-dev)
 INSTALL_DEV_EXTRA = $(INSTALL_LIB_EXTRA:=-dev)
 
-PHONY += install-doc
+.PHONY: install-doc
 install-doc:
 	@echo	"	INSTALL	$(DESTDIR)$(docdir_)/"
 	$(Q)mkdir -p		"$(DESTDIR)$(docdir)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(docdir)/"			\
 				"$(DOC_DIR_)/"
 
-PHONY += install-base
+.PHONY: install-base
 install-base: install-%: | _inst-%-etc _inst-%-lib _inst-ld
 	$(Q)$(MAKE) ldconfig
 
-PHONY += install-base-dev
-PHONY += $(INSTALL_LIB_ALX)
-PHONY += $(INSTALL_LIB_EXTRA)
-PHONY += $(INSTALL_DEV_ALX)
-PHONY += $(INSTALL_DEV_EXTRA)
+.PHONY: install-base-dev
+.PHONY: $(INSTALL_LIB_ALX)
+.PHONY: $(INSTALL_LIB_EXTRA)
+.PHONY: $(INSTALL_DEV_ALX)
+.PHONY: $(INSTALL_DEV_EXTRA)
 
 
 $(INSTALL_LIB_ALX): install-%: | _inst-alx-%-etc _inst-%-lib _inst-ld
@@ -210,7 +210,7 @@ $(INSTALL_DEV_EXTRA): install-%-dev: | _inst-extra-%-man _inst-extra-%-inc _inst
 ########################################################################
 ## Install helpers
 
-PHONY	+= _inst-base-etc
+.PHONY: _inst-base-etc
 _inst-base-etc:
 	@echo	"	INSTALL	$(DESTDIR)$(sysconfdir_)/base/"
 	$(Q)mkdir -p		"$(DESTDIR)$(sysconfdir_)/"
@@ -218,7 +218,7 @@ _inst-base-etc:
 				"$(ETC_DIR_)/base/"			\
 				2> /dev/null
 
-PHONY	+= _inst-alx-%-etc
+.PHONY: _inst-alx-%-etc
 _inst-alx-%-etc:
 	@echo	"	INSTALL	$(DESTDIR)$(sysconfdir_)/alx/$*/"
 	$(Q)mkdir -p		"$(DESTDIR)$(sysconfdir_)/alx/"
@@ -226,7 +226,7 @@ _inst-alx-%-etc:
 				"$(ETC_DIR_)/alx/$*/"			\
 				2> /dev/null
 
-PHONY	+= _inst-extra-%-etc
+.PHONY: _inst-extra-%-etc
 _inst-extra-%-etc:
 	@echo	"	INSTALL	$(DESTDIR)$(sysconfdir_)/extra/$*/"
 	$(Q)mkdir -p		"$(DESTDIR)$(sysconfdir_)/extra/"
@@ -234,18 +234,18 @@ _inst-extra-%-etc:
 				"$(ETC_DIR_)/extra/$*/"			\
 				2> /dev/null
 
-PHONY	+= _inst-%-lib
+.PHONY: _inst-%-lib
 _inst-%-lib: | _inst-%-lib-a _inst-%-lib-so
 	@:
 
-PHONY	+= _inst-%-lib-a
+.PHONY: _inst-%-lib-a
 _inst-%-lib-a:
 	@echo	"	INSTALL	$(DESTDIR)$(libdir_)/libalx-$*.a"
 	$(Q)mkdir -p		"$(DESTDIR)$(libdir_)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(libdir_)/"			\
 				"$(BUILD_A_DIR_)/libalx-$*.a"
 
-PHONY	+= _inst-%-lib-so
+.PHONY: _inst-%-lib-so
 _inst-%-lib-so:
 	@echo	"	INSTALL	$(DESTDIR)$(libdir_)/libalx-$*.so.$(LIBVERSION)"
 	$(Q)mkdir -p		"$(DESTDIR)$(libdir_)/"
@@ -255,7 +255,7 @@ _inst-%-lib-so:
 	$(Q)ln -sf -T		"libalx-$*.so.$(VERSION)"		\
 					"$(DESTDIR)$(libdir_)/libalx-$*.so"
 
-PHONY	+= _inst-base-man
+.PHONY: _inst-base-man
 _inst-base-man:
 	@echo	"	INSTALL	$(DESTDIR)$(mandir)/"
 	$(Q)mkdir -p		"$(DESTDIR)$(mandir)/"
@@ -263,7 +263,7 @@ _inst-base-man:
 				$(MAN_DIR)/base/*			\
 				2> /dev/null
 
-PHONY	+= _inst-alx-%-man
+.PHONY: _inst-alx-%-man
 _inst-alx-%-man:
 	@echo	"	INSTALL	$(DESTDIR)$(mandir)/"
 	$(Q)mkdir -p		"$(DESTDIR)$(mandir)/"
@@ -271,7 +271,7 @@ _inst-alx-%-man:
 				$(MAN_DIR)/alx/$*/*			\
 				2> /dev/null
 
-PHONY	+= _inst-extra-%-man
+.PHONY: _inst-extra-%-man
 _inst-extra-%-man:
 	@echo	"	INSTALL	$(DESTDIR)$(mandir)/"
 	$(Q)mkdir -p		"$(DESTDIR)$(mandir)/"
@@ -279,28 +279,28 @@ _inst-extra-%-man:
 				$(MAN_DIR)/extra/$*/*			\
 				2> /dev/null
 
-PHONY	+= _inst-base-inc
+.PHONY: _inst-base-inc
 _inst-base-inc:
 	@echo	"	INSTALL	$(DESTDIR)$(includedir_)/base/"
 	$(Q)mkdir -p		"$(DESTDIR)$(includedir_)/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(includedir_)/"		\
 				"$(INC_DIR_)/base/"
 
-PHONY	+= _inst-alx-%-inc
+.PHONY: _inst-alx-%-inc
 _inst-alx-%-inc:
 	@echo	"	INSTALL	$(DESTDIR)$(includedir_)/alx/$*/"
 	$(Q)mkdir -p		"$(DESTDIR)$(includedir_)/alx/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(includedir_)/alx/"		\
 				"$(INC_DIR_)/alx/$*/"
 
-PHONY	+= _inst-extra-%-inc
+.PHONY: _inst-extra-%-inc
 _inst-extra-%-inc:
 	@echo	"	INSTALL	$(DESTDIR)$(includedir_)/extra/$*/"
 	$(Q)mkdir -p		"$(DESTDIR)$(includedir_)/extra/"
 	$(Q)$(INSTALL_DATA) -t	"$(DESTDIR)$(includedir_)/extra/"	\
 				"$(INC_DIR_)/extra/$*/"
 
-PHONY	+= _inst-%-pc
+.PHONY: _inst-%-pc
 _inst-%-pc:
 	@echo	"	INSTALL	$(DESTDIR)$(libdir)/pkgconfig/libalx-$*.pc"
 	$(Q)sed	"s/<version>/$(LIBVERSION)/"				\
@@ -310,7 +310,7 @@ _inst-%-pc:
 	$(Q)$(INSTALL_DATA) -T	"$(LIB_DIR)/pkgconfig/libalx-$*.pc.$(LIBVERSION)" \
 				"$(DESTDIR)$(libdir)/pkgconfig/libalx-$*.pc"
 
-PHONY	+= _inst-ld
+.PHONY: _inst-ld
 _inst-ld:
 	@echo	"	INSTALL	$(DESTDIR)/etc/ld.so.conf.d/libalx.conf"
 	$(Q)mkdir -p		"$(DESTDIR)/etc/ld.so.conf.d/"
@@ -321,7 +321,7 @@ _inst-ld:
 ################################################################################
 # uninstall
 
-PHONY += uninstall
+.PHONY: uninstall
 uninstall:
 	@echo	"	Uninstall:"
 	@echo	"	RM -rf	$(DESTDIR)$(sysconfdir_)/"
@@ -350,7 +350,7 @@ uninstall:
 ################################################################################
 # ldconfig
 
-PHONY	+= ldconfig
+.PHONY: ldconfig
 ldconfig:
 	@echo	"	LDCONFIG"
 	$(Q)$(LDCONFIG)
@@ -358,14 +358,13 @@ ldconfig:
 ################################################################################
 # clean
 
-PHONY += clean
+.PHONY: clean
 clean:
 	@echo	"	RM	$(BUILD_DIR)"
 	$(Q)rm -rf	$(BUILD_DIR)
 
 ################################################################################
 # Declare the contents of the .PHONY variable as phony.
-.PHONY: $(PHONY)
 
 
 ################################################################################

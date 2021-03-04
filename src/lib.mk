@@ -258,97 +258,97 @@ ZBAR_SO_OBJ	= $(ZBAR_MODULES:%=$(BUILD_TMP_DIR)/%.so.o)
 
 # target: dependencies
 #	action
-PHONY += base
+.PHONY: base
 base: base_a base_so
-PHONY += base_a
+.PHONY: base_a
 base_a: $(BUILD_A_DIR_)/libalx-base.a
-PHONY += base_so
+.PHONY: base_so
 base_so: $(BUILD_SO_DIR_)/libalx-base.so.$(LIBVERSION)
 
 
-PHONY += data-structures
+.PHONY: data-structures
 data-structures: data-structures_a data-structures_so
-PHONY += data-structures_a
+.PHONY: data-structures_a
 data-structures_a: $(BUILD_A_DIR_)/libalx-data-structures.a
-PHONY += data-structures_a
+.PHONY: data-structures_a
 data-structures_so: $(BUILD_SO_DIR_)/libalx-data-structures.so.$(LIBVERSION)
 
-PHONY += npcomplete
+.PHONY: npcomplete
 npcomplete: npcomplete_a npcomplete_so
-PHONY += npcomplete_a
+.PHONY: npcomplete_a
 npcomplete_a: $(BUILD_A_DIR_)/libalx-npcomplete.a
-PHONY += npcomplete_so
+.PHONY: npcomplete_so
 npcomplete_so: $(BUILD_SO_DIR_)/libalx-npcomplete.so.$(LIBVERSION)
 
-PHONY += robot-ur
+.PHONY: robot-ur
 robot-ur: robot-ur_a robot-ur_so
-PHONY += robot-ur_a
+.PHONY: robot-ur_a
 robot-ur_a: $(BUILD_A_DIR_)/libalx-robot-ur.a
-PHONY += robot-ur_so
+.PHONY: robot-ur_so
 robot-ur_so: $(BUILD_SO_DIR_)/libalx-robot-ur.so.$(LIBVERSION)
 
-PHONY += robot-kawasaki
+.PHONY: robot-kawasaki
 robot-kawasaki: robot-kawasaki_a robot-kawasaki_so
-PHONY += robot-kawasaki_a
+.PHONY: robot-kawasaki_a
 robot-kawasaki_a: $(BUILD_A_DIR_)/libalx-robot-kawasaki.a
-PHONY += robot-kawasaki_so
+.PHONY: robot-kawasaki_so
 robot-kawasaki_so: $(BUILD_SO_DIR_)/libalx-robot-kawasaki.so.$(LIBVERSION)
 
 
-PHONY += cv
+.PHONY: cv
 cv: cv_a cv_so
-PHONY += cv_a
+.PHONY: cv_a
 cv_a: $(BUILD_A_DIR_)/libalx-cv.a
-PHONY += cv_so
+.PHONY: cv_so
 cv_so: $(BUILD_SO_DIR_)/libalx-cv.so.$(LIBVERSION)
 
-PHONY += gmp
+.PHONY: gmp
 gmp: gmp_a gmp_so
-PHONY += gmp_a
+.PHONY: gmp_a
 gmp_a: $(BUILD_A_DIR_)/libalx-gmp.a
-PHONY += gmp_so
+.PHONY: gmp_so
 gmp_so: $(BUILD_SO_DIR_)/libalx-gmp.so.$(LIBVERSION)
 
-PHONY += gsl
+.PHONY: gsl
 gsl: gsl_a gsl_so
-PHONY += gsl_a
+.PHONY: gsl_a
 gsl_a: $(BUILD_A_DIR_)/libalx-gsl.a
-PHONY += gsl_so
+.PHONY: gsl_so
 gsl_so: $(BUILD_SO_DIR_)/libalx-gsl.so.$(LIBVERSION)
 
-PHONY += ncurses
+.PHONY: ncurses
 ncurses: ncurses_a ncurses_so
-PHONY += ncurses_a
+.PHONY: ncurses_a
 ncurses_a: $(BUILD_A_DIR_)/libalx-ncurses.a
-PHONY += ncurses_so
+.PHONY: ncurses_so
 ncurses_so: $(BUILD_SO_DIR_)/libalx-ncurses.so.$(LIBVERSION)
 
-PHONY += ocr
+.PHONY: ocr
 ocr: ocr_a ocr_so
-PHONY += ocr_a
+.PHONY: ocr_a
 ocr_a: $(BUILD_A_DIR_)/libalx-ocr.a
-PHONY += ocr_so
+.PHONY: ocr_so
 ocr_so: $(BUILD_SO_DIR_)/libalx-ocr.so.$(LIBVERSION)
 
-PHONY += plot
+.PHONY: plot
 plot: plot_a plot_so
-PHONY += plot_a
+.PHONY: plot_a
 plot_a: $(BUILD_A_DIR_)/libalx-plot.a
-PHONY += plot_so
+.PHONY: plot_so
 plot_so: $(BUILD_SO_DIR_)/libalx-plot.so.$(LIBVERSION)
 
-PHONY += telnet-tcp
+.PHONY: telnet-tcp
 telnet-tcp: telnet-tcp_a telnet-tcp_so
-PHONY += telnet-tcp_a
+.PHONY: telnet-tcp_a
 telnet-tcp_a: $(BUILD_A_DIR_)/libalx-telnet-tcp.a
-PHONY += telnet-tcp_so
+.PHONY: telnet-tcp_so
 telnet-tcp_so: $(BUILD_SO_DIR_)/libalx-telnet-tcp.so.$(LIBVERSION)
 
-PHONY += zbar
+.PHONY: zbar
 zbar: zbar_a zbar_so
-PHONY += zbar_a
+.PHONY: zbar_a
 zbar_a: $(BUILD_A_DIR_)/libalx-zbar.a
-PHONY += zbar_so
+.PHONY: zbar_so
 zbar_so: $(BUILD_SO_DIR_)/libalx-zbar.so.$(LIBVERSION)
 
 
@@ -478,13 +478,12 @@ $(BUILD_SO_DIR_)/libalx-zbar.so.$(LIBVERSION): %.$(LIBVERSION): $(ZBAR_SO_OBJ)
 	$(Q)ln -sf -T	$(*F).$(LIBVERSION)	$*
 
 
-PHONY += clean
+.PHONY: clean
 clean:
 	$(Q)rm -f *.a *.so
 
 ################################################################################
 # Declare the contents of the .PHONY variable as phony.
-.PHONY: $(PHONY)
 
 
 ################################################################################

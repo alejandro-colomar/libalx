@@ -13,20 +13,20 @@
 # target: dependencies
 #	action
 
-PHONY += base
+.PHONY: base
 base:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/base/
 
 
-PHONY += data-structures
+.PHONY: data-structures
 data-structures:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
-PHONY += npcomplete
+.PHONY: npcomplete
 npcomplete:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
-PHONY += robot-ur
+.PHONY: robot-ur
 robot-ur:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
@@ -35,47 +35,46 @@ robot-ur:
 #	$(Q)$(MAKE)	-C $(SRC_DIR)/alx/$@/
 
 
-PHONY += cv
+.PHONY: cv
 cv:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += gmp
+.PHONY: gmp
 gmp:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += gsl
+.PHONY: gsl
 gsl:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += ncurses
+.PHONY: ncurses
 ncurses:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += ocr
+.PHONY: ocr
 ocr:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += plot
+.PHONY: plot
 plot:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += telnet-tcp
+.PHONY: telnet-tcp
 telnet-tcp:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
-PHONY += zbar
+.PHONY: zbar
 zbar:
 	$(Q)$(MAKE)	-C $(SRC_DIR)/extra/$@/
 
 
-PHONY += clean
+.PHONY: clean
 clean:
 	@echo	"	RM	*.o *.s"
 	$(Q)rm -f *.o *.s
 
 ################################################################################
 # Declare the contents of the .PHONY variable as phony.
-.PHONY: $(PHONY)
 
 
 ################################################################################
