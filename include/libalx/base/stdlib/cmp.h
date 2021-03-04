@@ -118,10 +118,9 @@ int	alx_cmp_ldbl	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -132,10 +131,9 @@ int	alx_cmp		(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -146,10 +144,9 @@ int	alx_cmp_f	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -160,10 +157,9 @@ int	alx_cmp_uint	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -174,10 +170,9 @@ int	alx_cmp_int	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -188,10 +183,9 @@ int	alx_cmp_char	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -202,10 +196,9 @@ int	alx_cmp_u8	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -216,10 +209,9 @@ int	alx_cmp_s8	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -230,10 +222,9 @@ int	alx_cmp_u16	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -244,10 +235,9 @@ int	alx_cmp_s16	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -258,10 +248,9 @@ int	alx_cmp_u32	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -272,10 +261,9 @@ int	alx_cmp_s32	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -286,10 +274,9 @@ int	alx_cmp_u64	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 inline
@@ -300,10 +287,9 @@ int	alx_cmp_s64	(const void *a_ptr, const void *b_ptr)
 
 	if (a < b)
 		return	-1;
-	else if (a > b)
+	if (a > b)
 		return	1;
-	else
-		return	0;
+	return	0;
 }
 
 
